@@ -1,28 +1,277 @@
-<!doctype html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>eCandle Program - DePIN for Impact | Solar Energy for Off-Grid Communities</title>
-    <meta name="description" content="DePIN for Impact brings reliable, pay-as-you-go solar energy to off-grid communities in Kenya. Discover how the eCandle battery kit powers sustainable development." />
-    <meta name="author" content="Arkreen Network" />
-    <meta name="keywords" content="eCandle, DePIN, solar energy, off-grid, Kenya, sustainable development, battery kit, renewable energy, blockchain, mobile payments" />
+<!DOCTYPE html>
+<html lang="en" data-accent="amber" data-mode="light">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>eCandle — Real energy demand, on-chain settlement</title>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet" />
+<link rel="icon" href="https://www.arkreen.com/icon/arkreen-01.svg" type="image/svg+xml" />
+<link rel="stylesheet" href="styles.css" />
+</head>
+<body>
 
-    <meta property="og:title" content="eCandle Program - DePIN for Impact" />
-    <meta property="og:description" content="Bringing reliable, pay-as-you-go solar energy to off-grid communities in Kenya through innovative battery technology and blockchain settlement." />
-    <meta property="og:type" content="website" />
-    <meta property="og:image" content="assets/community-payment-CR7n-Lo-.jpg" />
+<!-- ============ NAV ============ -->
+<nav class="nav" id="nav">
+  <div class="wrap nav-inner">
+    <a class="brand" href="#top"><img class="brand-logo" src="https://www.arkreen.com/icon/arkreen-01.svg" alt="Arkreen" width="115" height="24" /><span class="brand-div"></span><span class="brand-name">eCandle</span></a>
+    <div class="nav-links">
+      <a href="#why">Why</a>
+      <a href="#what">What</a>
+      <a href="#how">How it works</a>
+      <a href="#who">Participate</a>
+    </div>
+    <div class="nav-cta">
+      <a class="btn btn-primary" href="#fund">Fund a node
+        <svg viewBox="0 0 16 16" fill="none"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </a>
+    </div>
+  </div>
+</nav>
 
-    <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:site" content="@arkreen_network" />
-    <meta name="twitter:image" content="assets/community-payment-CR7n-Lo-.jpg" />
-    
-    <link rel="canonical" href="https://ecandle.arkreen.com/" />
-    <script type="module" crossorigin src="/assets/index-BarTo9DY.js"></script>
-    <link rel="stylesheet" crossorigin href="/assets/index-D-Qw9LY5.css">
-  </head>
+<!-- ============ HERO ============ -->
+<header class="hero" id="top" data-screen-label="Hero">
+  <div class="wrap">
+    <div class="hero-grid">
+      <div class="hero-copy">
+        <p class="eyebrow reveal">DePIN for Impact · Energy Node</p>
+        <h1 class="display reveal" data-delay="1">Real energy demand,<br/>on-chain <span class="glow-word">settlement</span>.</h1>
+        <p class="lede reveal" data-delay="2">eCandle is the first DePIN for Impact energy node — turning real-world, off-grid energy demand into programmable, recordable, and distributable cashflow, settled on-chain in stablecoins.</p>
+        <div class="hero-actions reveal" data-delay="3">
+          <a class="btn btn-primary" href="#fund">Become a capital builder
+            <svg viewBox="0 0 16 16" fill="none"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </a>
+          <a class="btn btn-ghost" href="#how">See the value loop</a>
+        </div>
+        <div class="spec-strip reveal" data-delay="3">
+          <span class="spec-chip"><b>200W</b> solar</span>
+          <span class="spec-chip"><b>1 kWh</b> battery</span>
+          <span class="spec-chip"><b>PayGo</b> access</span>
+          <span class="spec-chip"><b>On-chain</b> settlement</span>
+        </div>
+      </div>
+      <div class="hero-visual reveal" data-delay="2">
+        <div class="hero-glow"></div>
+        <div class="hero-slot">
+          <img class="hero-product" src="assets/ecandle-product.jpg" alt="eCandle portable solar battery unit — FAITHTEC × Arkreen" />
+        </div>
+      </div>
+    </div>
 
-  <body>
-    <div id="root"></div>
-  </body>
+    <!-- marquee -->
+    <div class="marquee reveal">
+      <div class="marquee-track" id="marquee">
+        <span>Solar generation</span><span>Battery storage</span><span>PayGo access</span><span>Local operations</span><span>On-chain settlement</span><span>Recurring micropayments</span><span>Transparent revenue sharing</span>
+      </div>
+    </div>
+  </div>
+</header>
+
+<!-- ============ WHY ============ -->
+<section id="why" data-screen-label="Why">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <p class="eyebrow">Why eCandle exists</p>
+      <h2 class="section-title">A structural mismatch in how the world builds infrastructure.</h2>
+      <p class="lede">Stablecoins need a credible path from on-chain liquidity to real-world utility. Off-grid communities need reliable, affordable, sustainable energy. Today these two needs sit on opposite sides of a gap.</p>
+    </div>
+
+    <div class="mismatch">
+      <div class="mismatch-card left reveal" data-delay="1">
+        <p class="mono-label">The supply side</p>
+        <h3>Capital is abundant —</h3>
+        <p>but in the places where capital and financial access are concentrated, real infrastructure demand is often already met, or missing entirely.</p>
+        <div class="big">Capital&nbsp;↑</div>
+      </div>
+
+      <div class="mismatch-bridge reveal" data-delay="2">
+        <div class="wire"></div>
+        <div class="node">eCandle<br/>bridge</div>
+      </div>
+
+      <div class="mismatch-card right reveal" data-delay="3">
+        <p class="mono-label">The demand side</p>
+        <h3>Demand is strongest —</h3>
+        <p>but where real energy demand is most acute, capital and financial access are scarce, and reliable infrastructure never gets built.</p>
+        <div class="big">Demand&nbsp;↑</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ SCENE (full-bleed real-world proof) ============ -->
+<section class="scene-band" id="proof" data-screen-label="Proof">
+  <div class="wrap">
+    <p class="eyebrow reveal">Live deployment</p>
+    <figure class="scene-media reveal" data-delay="1">
+      <img src="assets/ecandle-scene.jpg" alt="An eCandle community solar node deployed in an off-grid West African market — a solar panel and green eCandle unit powering a bank of phone chargers for local residents and small merchants." loading="lazy" />
+    </figure>
+    <figcaption class="scene-cap reveal" data-delay="2">One node powering phone-charging, lighting, and small-merchant loads — generating recurring stablecoin micropayments from real, daily demand.</figcaption>
+  </div>
+</section>
+
+<!-- ============ WHAT ============ -->
+<section id="what" data-screen-label="What">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <p class="eyebrow">What it is</p>
+      <h2 class="section-title">A standardized physical unit that turns electricity into cashflow.</h2>
+    </div>
+
+    <div class="what-grid">
+      <div class="anatomy reveal">
+        <div class="ring"></div>
+        <div class="ring r2"></div>
+        <div class="anatomy-slot">
+          <img class="anatomy-product" src="assets/ecandle-product.jpg" alt="eCandle energy node unit" />
+        </div>
+      </div>
+
+      <div>
+        <div class="feature-list">
+          <div class="feature reveal" data-delay="1"><div class="idx">01</div><div><h4>Solar generation</h4><p>A 200W panel captures energy at the point of need — no grid connection required.</p></div></div>
+          <div class="feature reveal" data-delay="1"><div class="idx">02</div><div><h4>Battery storage</h4><p>A 1 kWh battery holds power for lighting, charging, and small-merchant loads after dark.</p></div></div>
+          <div class="feature reveal" data-delay="2"><div class="idx">03</div><div><h4>PayGo access</h4><p>Metered, smart output lets users pay tiny amounts to access power — by the charge, rental, or shared use.</p></div></div>
+          <div class="feature reveal" data-delay="2"><div class="idx">04</div><div><h4>Local operations</h4><p>Deployed and maintained by local operators who own the relationship with the community.</p></div></div>
+          <div class="feature reveal" data-delay="3"><div class="idx">05</div><div><h4>On-chain settlement</h4><p>Every payment flows directly into smart contracts — no centralized billing, no manual reconciliation.</p></div></div>
+        </div>
+        <p class="what-claim reveal" data-delay="3">It is <span class="strike">not just a solar battery</span>. It is a real-world stablecoin utility primitive — a programmable energy revenue node.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ HOW ============ -->
+<section id="how" data-screen-label="How">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <p class="eyebrow">How it works</p>
+      <h2 class="section-title">One closed loop. Four steps. Settled by code.</h2>
+      <p class="lede">eCandle connects global capital, local operations, real energy demand, and stablecoin settlement into one replicable infrastructure loop.</p>
+    </div>
+
+    <div class="loop-wrap">
+      <div class="loop reveal">
+        <svg viewBox="0 0 400 400" aria-hidden="true">
+          <circle class="orbit" cx="200" cy="200" r="150"></circle>
+          <circle class="flow" cx="200" cy="200" r="150"></circle>
+        </svg>
+        <div class="loop-core"><span>Replicable</span><b>Value loop</b></div>
+        <div class="loop-node" data-step="0" style="left:50%;top:5%">1</div>
+        <div class="loop-node" data-step="1" style="left:95%;top:50%">2</div>
+        <div class="loop-node" data-step="2" style="left:50%;top:95%">3</div>
+        <div class="loop-node" data-step="3" style="left:5%;top:50%">4</div>
+      </div>
+
+      <div class="loop-steps">
+        <div class="step active" data-step="0">
+          <div class="step-head"><span class="step-num">01</span><h4>Crowdfund &amp; co-initiate</h4><span class="step-dot"></span></div>
+          <p class="step-body">On-chain impact crowdfunding and ecosystem co-initiation fund the deployment of new eCandle units — capital builders back real hardware, not narratives.</p>
+        </div>
+        <div class="step" data-step="1">
+          <div class="step-head"><span class="step-num">02</span><h4>Deploy through operators</h4><span class="step-dot"></span></div>
+          <p class="step-body">Units are deployed into off-grid households, small merchants, and community nodes through trusted local operators who install and maintain them.</p>
+        </div>
+        <div class="step" data-step="2">
+          <div class="step-head"><span class="step-num">03</span><h4>Access &amp; pay-as-you-go</h4><span class="step-dot"></span></div>
+          <p class="step-body">Users access energy through shared-use, rental, or PayGo models — generating a stream of recurring stablecoin micropayments from real demand.</p>
+        </div>
+        <div class="step" data-step="3">
+          <div class="step-head"><span class="step-num">04</span><h4>Record &amp; distribute on-chain</h4><span class="step-dot"></span></div>
+          <p class="step-body">Payments and usage data are recorded, aggregated, and distributed by smart contracts — enabling transparent revenue sharing, future RWA structures, and long-term participation.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ WHO ============ -->
+<section id="who" data-screen-label="Participate">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <p class="eyebrow">Who participates</p>
+      <h2 class="section-title">Hardware becomes a collaboration interface.</h2>
+      <p class="lede">Three roles, one network — connecting global capital with local execution and real demand.</p>
+    </div>
+
+    <div class="roles">
+      <div class="role reveal" data-delay="1">
+        <p class="role-tag">Global · Capex</p>
+        <h3>Capital Builders</h3>
+        <p>Provide the upfront capital for physical infrastructure. Receive transparent, on-chain revenue distributions as units earn from real usage.</p>
+        <div class="role-meta">Earns from → recurring settlement</div>
+      </div>
+      <div class="role reveal" data-delay="2">
+        <p class="role-tag">Local · Opex</p>
+        <h3>Local Operators</h3>
+        <p>Handle site selection, installation, maintenance, and day-to-day operation. Own the community relationship and share in the cashflow they generate.</p>
+        <div class="role-meta">Earns from → operations &amp; uptime</div>
+      </div>
+      <div class="role reveal" data-delay="3">
+        <p class="role-tag">Community · Demand</p>
+        <h3>End Users</h3>
+        <p>Off-grid households and small merchants access reliable, affordable power — paying small amounts of stablecoins via mobile phones, only for what they use.</p>
+        <div class="role-meta">Pays for → real energy access</div>
+      </div>
+    </div>
+
+    <!-- impact stats -->
+    <div class="stats reveal">
+      <div class="stat"><div class="num" data-count="300000" data-suffix="+">0</div><div class="lbl">Distributed energy nodes in the Arkreen network behind eCandle</div></div>
+      <div class="stat"><div class="num" data-count="2" data-prefix="" data-suffix=" regions">0</div><div class="lbl">Active pilot regions across Africa &amp; Latin America</div></div>
+      <div class="stat"><div class="num" data-count="100" data-suffix="%">0</div><div class="lbl">Of micropayments settled on-chain — no off-chain accounting</div></div>
+      <div class="stat"><div class="num" data-count="1" data-suffix=" loop">0</div><div class="lbl">Replicable infrastructure model, deployable anywhere off-grid</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ FINAL CTA ============ -->
+<section class="cta-final" id="fund" data-screen-label="Fund">
+  <div class="wrap">
+    <div class="cta-card reveal">
+      <p class="eyebrow" style="justify-content:center">Join the loop</p>
+      <h2>Fund the nodes that<br/>power real communities.</h2>
+      <p class="lede">Back the first eCandle deployments as a capital builder — and earn from a stablecoin value loop validated by real devices, real users, and real recurring payments.</p>
+      <div class="cta-actions">
+        <a class="btn btn-primary" href="#">Become a capital builder
+          <svg viewBox="0 0 16 16" fill="none"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </a>
+        <a class="btn btn-ghost" href="#">Become a local operator</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ FOOTER ============ -->
+<footer class="footer">
+  <div class="wrap">
+    <div class="footer-grid">
+      <div>
+        <a class="brand" href="#top"><img class="brand-logo" src="https://www.arkreen.com/icon/arkreen-01.svg" alt="Arkreen" width="115" height="24" /><span class="brand-div"></span><span class="brand-name">eCandle</span></a>
+        <p class="blurb">A DePIN for Impact energy node turning off-grid electricity usage into programmable, recordable, distributable on-chain cashflow.</p>
+      </div>
+      <div>
+        <h5>Product</h5>
+        <div class="flinks"><a href="#why">Why</a><a href="#what">What</a><a href="#how">How it works</a><a href="#who">Participate</a></div>
+      </div>
+      <div>
+        <h5>Participate</h5>
+        <div class="flinks"><a href="#fund">Fund a node</a><a href="#fund">Become an operator</a><a href="#">Read the lite paper</a><a href="#">Partner with us</a></div>
+      </div>
+      <div>
+        <h5>Community</h5>
+        <div class="flinks"><a href="https://x.com/arkreen_network" target="_blank" rel="noopener">X / Twitter</a><a href="https://t.me/arkreen_network" target="_blank" rel="noopener">Telegram</a><a href="https://discord.com/invite/j5fSNRKGme" target="_blank" rel="noopener">Discord</a><a href="https://www.arkreen.com/blog/" target="_blank" rel="noopener">Blog</a></div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span class="mono-label">© 2026 eCandle · Built on Arkreen</span>
+      <span class="mono-label">Real devices · Real users · Real recurring payments</span>
+    </div>
+  </div>
+</footer>
+
+<script src="app.js"></script>
+
+</body>
 </html>
