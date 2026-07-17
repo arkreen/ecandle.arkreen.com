@@ -106,8 +106,10 @@ h1, h2, h3 { font-family: var(--font-display); font-weight: 400; line-height: 1.
 .nav-inner { display: flex; align-items: center; justify-content: space-between; height: 74px; }
 .brand { display: inline-flex; align-items: center; gap: 11px; font-family: var(--font-display); font-weight: 400; font-size: 24px; letter-spacing: -0.01em; }
 .brand-logo { height: 22px; width: auto; display: block; }
+.brand-mark { height: 23px; width: auto; display: block; }
 .brand-div { width: 1px; height: 19px; background: var(--line); display: inline-block; }
 .brand-name { font-family: var(--font-display); }
+.brand-name em { font-style: italic; color: var(--green); }
 .brand .flame { width: 9px; height: 9px; border-radius: 50%; background: var(--accent); box-shadow: 0 0 0 4px color-mix(in oklch, var(--accent) 16%, transparent); }
 .nav-links { display: flex; align-items: center; gap: 32px; }
 .nav-links a { font-size: 14.5px; color: var(--ink-dim); transition: color .2s; position: relative; }
