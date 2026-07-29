@@ -1,0 +1,535 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>eCandle 1 — The Commercial-Grade Programmable Energy Node</title>
+<meta name="description" content="A 1004Wh portable energy system with an embedded ESP32, documented device control, flexible PAYGo access and optional onchain settlement." />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet" />
+<link rel="icon" href="../../brand/assets/favicon.svg" type="image/svg+xml" />
+<link rel="icon" href="../../brand/assets/favicon-32.png" sizes="32x32" type="image/png" />
+<link rel="icon" href="../../brand/assets/favicon-16.png" sizes="16x16" type="image/png" />
+<link rel="apple-touch-icon" href="../../brand/assets/apple-touch-icon-180.png" />
+<link rel="stylesheet" href="../../styles-product.css" />
+</head>
+<body>
+
+<nav class="nav" id="nav">
+  <div class="wrap nav-inner">
+    <a class="brand" href="../../"><img src="https://www.arkreen.com/icon/arkreen-01.svg" alt="Arkreen" width="110" height="21" /><span class="brand-div"></span><img src="../../brand/assets/ecandle-mark-color.svg" alt="" width="21" height="21" /><span>e<em>Candle</em> 1</span></a>
+    <div class="nav-links">
+      <a href="#hardware">Hardware</a>
+      <a href="#programmable">Programmable layer</a>
+      <a href="#architecture">Architecture</a>
+      <a href="#paygo">PAYGo</a>
+      <a href="#onchain">Onchain</a>
+      <a href="#build">Build</a>
+      <a href="#field">Field</a>
+      <a href="#status">Status</a>
+      <a href="#specs">Specs</a>
+    </div>
+    <a class="btn btn-primary" href="#developers">Request a developer unit</a>
+  </div>
+</nav>
+
+<header class="hero" id="top" data-screen-label="Hero">
+  <div class="wrap">
+    <div class="hero-grid">
+      <div>
+        <p class="eyebrow reveal">Arkreen Hardware · Product Detail</p>
+        <h1 class="display reveal" data-delay="1">eCandle 1<br/>The commercial-grade <span class="italic">programmable</span> energy node.</h1>
+        <p class="lede reveal" data-delay="2">A 1004Wh portable energy system with an embedded ESP32, documented device control, flexible PAYGo access and optional onchain settlement.</p>
+        <div class="hero-actions reveal" data-delay="3">
+          <a class="btn btn-primary" href="#hardware">Explore the hardware
+            <svg viewBox="0 0 16 16" fill="none"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </a>
+          <a class="btn btn-ghost" href="#paygo">See the PAYGo demo</a>
+          <a class="btn btn-ghost" href="#developers">Request a developer unit</a>
+        </div>
+        <div class="spec-strip reveal" data-delay="3">
+          <span class="spec-chip"><b>1004Wh</b> LFP</span>
+          <span class="spec-chip"><b>300W</b> AC output</span>
+          <span class="spec-chip"><b>Embedded</b> ESP32</span>
+          <span class="spec-chip"><b>PAYGo</b> ready</span>
+        </div>
+      </div>
+      <div class="hero-visual reveal" data-delay="2">
+        <div class="hero-shot"><img src="../../assets/p-hero.jpg" alt="eCandle 1 portable energy node — FAITHTEC × Arkreen" /></div>
+        <div class="flowline">
+          <span class="step on">Payment</span><span class="arw"></span>
+          <span class="step on">Authorisation</span><span class="arw"></span>
+          <span class="step">ESP32</span><span class="arw"></span>
+          <span class="step hot">Energy output</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</header>
+
+<div class="wrap"><div class="divider"></div></div>
+
+<section id="hardware" data-screen-label="Hardware">
+  <div class="wrap">
+    <div class="section-head">
+      <p class="eyebrow reveal">01 · Commercial foundation</p>
+      <h2 class="section-title reveal" data-delay="1">Built as a product.<br/>Opened as a platform.</h2>
+    </div>
+    <div class="split wide-fig">
+      <div class="body-copy reveal">
+        <p>eCandle is built on a commercially manufactured portable energy system, combining a long-life LFP battery, bidirectional inverter, solar input, UPS functionality and production-grade protection systems.</p>
+        <p>Its embedded ESP32 and documented inverter interface allow developers to build new energy-access applications without designing a battery and inverter system from scratch.</p>
+        <ul class="legend">
+          <li><span class="n">1</span><span>LFP battery pack</span></li>
+          <li><span class="n">2</span><span>Bidirectional inverter</span></li>
+          <li><span class="n">3</span><span>MPPT solar input</span></li>
+          <li><span class="n">4</span><span>BMS &amp; protection</span></li>
+          <li><span class="n">5</span><span>Embedded ESP32</span></li>
+          <li><span class="n">6</span><span>AC / DC interfaces</span></li>
+          <li><span class="n">7</span><span>Air cooling system</span></li>
+        </ul>
+      </div>
+      <div class="figure reveal" data-delay="1">
+        <img src="../../assets/p-exploded.jpg" alt="eCandle 1 exploded view — enclosure, chassis, inverter boards, battery pack, cooling and interfaces" />
+        <p class="figcap">Exploded view — eCandle 1, 1004Wh / 300W</p>
+      </div>
+    </div>
+    <div class="metrics reveal">
+      <div><p class="v">1004Wh</p><p class="k">LFP storage</p></div>
+      <div><p class="v">300W</p><p class="k">AC output</p></div>
+      <div><p class="v">200W</p><p class="k">PV input (max)</p></div>
+      <div><p class="v">6,000+</p><p class="k">Cycle life</p></div>
+      <div><p class="v">10ms</p><p class="k">UPS switchover</p></div>
+      <div><p class="v">~9kg</p><p class="k">Weight</p></div>
+    </div>
+  </div>
+</section>
+
+<div class="wrap"><div class="divider"></div></div>
+
+<section id="programmable" data-screen-label="Programmable layer">
+  <div class="wrap">
+    <div class="section-head">
+      <p class="eyebrow reveal">02 · Why the ESP32 matters</p>
+      <h2 class="section-title reveal" data-delay="1">A programmable layer inside the energy device.</h2>
+      <p class="lede reveal" data-delay="2">Most commercial energy products expose only a fixed mobile app or a proprietary cloud connection. eCandle integrates an ESP32 directly into the product and provides an interface to the inverter and device-control layer.</p>
+    </div>
+    <div class="split">
+      <div class="figure reveal">
+        <img src="../../assets/p-internal.jpg" alt="eCandle 1 with the shell removed, showing the inverter board, control electronics, heat sink and twin cooling fans" />
+        <p class="figcap">Inverter and control boards — shell removed, bench unit</p>
+      </div>
+      <div class="body-copy reveal" data-delay="1">
+        <p>The battery, BMS and inverter remain a certified, production-grade safety layer. The application layer above them is where developers work: reading state, authorising output, and running energy logic on the device itself.</p>
+        <p class="note">Readable and controllable fields are confirmed interface by interface with the manufacturer. We publish what is verified, not what is hoped for.</p>
+      </div>
+    </div>
+    <div class="cards">
+      <div class="card reveal"><h3>Device data</h3><p>Read battery state, output power, runtime status and fault information.</p></div>
+      <div class="card reveal" data-delay="1"><h3>Output control</h3><p>Control user-side energy output based on payment, operator rules or application authorisation.</p></div>
+      <div class="card reveal" data-delay="2"><h3>Local intelligence</h3><p>Keep executing local PAYGo and safety policy when the network is down.</p></div>
+      <div class="card reveal"><h3>Connectivity</h3><p>BLE and Wi-Fi built in, with optional 4G expansion.</p></div>
+      <div class="card reveal" data-delay="1"><h3>Application runtime</h3><p>Run PAYGo, energy sessions, shared rental and third-party energy applications.</p></div>
+      <div class="card reveal" data-delay="2"><h3>Secure updates</h3><p>Signed OTA, device identity and production security policy.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="night" id="architecture" data-screen-label="Architecture">
+  <div class="wrap">
+    <div class="section-head">
+      <p class="eyebrow reveal">03 · Software architecture</p>
+      <h2 class="section-title reveal" data-delay="1">One device.<br/>Multiple open energy applications.</h2>
+    </div>
+    <div class="stack">
+      <div class="stack-row app reveal"><span class="lv">L5</span><div><p class="t">Community energy applications</p><p class="s">PAYGo · Rental · Shared use · Productive use</p></div></div>
+      <div class="stack-arrow"></div>
+      <div class="stack-row reveal"><span class="lv">L4</span><div><p class="t">Payment &amp; settlement adapters</p><p class="s">Mobile money · Operator backend · Stablecoin</p></div></div>
+      <div class="stack-arrow"></div>
+      <div class="stack-row reveal"><span class="lv">L3</span><div><p class="t">eCandle open application runtime</p><p class="s">Authorisation · Energy session · Device identity · OTA</p></div></div>
+      <div class="stack-arrow"></div>
+      <div class="stack-row reveal"><span class="lv">L2</span><div><p class="t">Hardware abstraction layer</p><p class="s">Meter · Inverter · Battery · Output control</p></div></div>
+      <div class="stack-arrow"></div>
+      <div class="stack-row hw reveal"><span class="lv">L1</span><div><p class="t">Commercial eCandle hardware</p><p class="s">1004Wh LFP · 300W inverter · MPPT · Protection</p></div></div>
+    </div>
+    <p class="note reveal">The battery and inverter remain a production-grade safety layer. The ESP32 application layer is designed to be documented, extensible and progressively opened to developers.</p>
+  </div>
+</section>
+
+<section id="paygo" data-screen-label="PAYGo">
+  <div class="wrap">
+    <div class="section-head">
+      <p class="eyebrow reveal">04 · PAYGo capability</p>
+      <h2 class="section-title reveal" data-delay="1">PAYGo access, without rebuilding the device.</h2>
+    </div>
+    <div class="panels">
+      <div class="panel reveal">
+        <span class="pill live"><span class="dot"></span>Working prototype</span>
+        <h3>Onchain PAYGo prototype</h3>
+        <p>An onchain payment or authorisation event unlocks a metered energy service on a real unit today.</p>
+        <div class="vflow">
+          <div class="s mark">Onchain payment or authorisation</div><div class="a"></div>
+          <div class="s">ESP32 receives the access instruction</div><div class="a"></div>
+          <div class="s">eCandle enables the authorised output</div><div class="a"></div>
+          <div class="s out">Energy service is delivered</div>
+        </div>
+        <div class="hero-actions"><a class="btn btn-ghost" href="https://drive.google.com/file/d/1s0jKw0HmM9fKzEzKFFHLCUb9IlViqIMv/view?usp=sharing" target="_blank" rel="noopener">Watch the demo
+            <svg viewBox="0 0 16 16" fill="none"><path d="M6 4.5l5 3.5-5 3.5z" fill="currentColor"/></svg>
+          </a></div>
+      </div>
+      <div class="panel reveal" data-delay="1">
+        <span class="pill dev"><span class="dot"></span>In development</span>
+        <h3>OpenPAYGO integration</h3>
+        <p>OpenPAYGO will provide the standard offline access rail. Planned scope:</p>
+        <ul class="ticks">
+          <li>OpenPAYGO Token verification</li>
+          <li>Offline usage credit</li>
+          <li>Token counter and replay protection</li>
+          <li>OpenPAYGO Metrics mapping</li>
+          <li>BLE / Wi-Fi token transport</li>
+          <li>PaygOps or other compatible backend connection</li>
+          <li>OpenPAYGO compatibility testing</li>
+        </ul>
+      </div>
+    </div>
+    <p class="note reveal">OpenPAYGO provides the standard offline access rail. Arkreen's onchain flow remains one optional payment and settlement adapter.</p>
+  </div>
+</section>
+
+<div class="wrap"><div class="divider"></div></div>
+
+<section id="payments" data-screen-label="Payment neutrality">
+  <div class="wrap">
+    <div class="section-head">
+      <p class="eyebrow reveal">05 · Payment neutrality</p>
+      <h2 class="section-title reveal" data-delay="1">One energy device.<br/>Multiple ways to pay.</h2>
+    </div>
+    <div class="payflow reveal">
+      <div class="rails">
+        <span class="rail">Cash</span><span class="rail">Mobile money</span><span class="rail">PaygOps</span><span class="rail">Stablecoin</span>
+      </div>
+      <div class="a"></div>
+      <div class="box">Payment adapter</div>
+      <div class="a"></div>
+      <div class="box">Authorisation</div>
+      <div class="a"></div>
+      <p class="dev">eCandle</p>
+    </div>
+    <p class="note reveal">End users may continue using familiar local payment methods. Stablecoins can be used by sponsors, operators, developers or cross-border settlement partners without becoming a mandatory customer experience.</p>
+  </div>
+</section>
+
+<section class="night" id="onchain" data-screen-label="Onchain">
+  <div class="wrap">
+    <div class="section-head">
+      <p class="eyebrow reveal">06 · Arkreen onchain layer</p>
+      <h2 class="section-title reveal" data-delay="1">From device access to programmable settlement.</h2>
+    </div>
+    <div class="cards">
+      <div class="card reveal"><h3>Device identity</h3><p>Bind each eCandle to a device identity, hardware model, firmware version and operating relationship.</p></div>
+      <div class="card reveal" data-delay="1"><h3>Payment authorisation</h3><p>Onchain payment or authorisation events convert into device usage rights.</p></div>
+      <div class="card reveal" data-delay="2"><h3>Verifiable energy records</h3><p>Link payment references, device state and metering results to a single energy-service record.</p></div>
+      <div class="card reveal" data-delay="3"><h3>Programmable settlement</h3><p>Split revenue between operators, device financiers, maintenance partners and other participants by project rule.</p></div>
+    </div>
+    <div class="split">
+      <div class="vflow reveal" style="margin-top:0">
+        <div class="s mark">Payment</div><div class="a"></div>
+        <div class="s">Authorisation</div><div class="a"></div>
+        <div class="s out">Physical energy delivery</div><div class="a"></div>
+        <div class="s">Metered energy record</div><div class="a"></div>
+        <div class="s">Operator reporting</div><div class="a"></div>
+        <div class="s mark">Optional onchain settlement</div>
+      </div>
+      <div class="body-copy reveal" data-delay="1">
+        <p>Device-originated records can be linked to transparent onchain payment and settlement events.</p>
+        <p>We deliberately do not claim that every energy record is independently verified onchain — device signing, meter calibration and renewable charging provenance each require their own trust model, and those are being built openly.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="session" data-screen-label="Energy session">
+  <div class="wrap">
+    <div class="section-head">
+      <p class="eyebrow reveal">07 · Open Energy Session</p>
+      <h2 class="section-title reveal" data-delay="1">A portable record of energy service.</h2>
+      <p class="lede reveal" data-delay="2">An Energy Session connects device authorisation with the energy service actually delivered. It can support operator reporting, community energy applications, RBF workflows and optional settlement.</p>
+    </div>
+    <div class="split">
+      <pre class="code reveal">{
+  <span class="k">"deviceId"</span>: <span class="s">"ecandle_001"</span>,
+  <span class="k">"authorisationRef"</span>: <span class="s">"payment_or_paygo_ref"</span>,
+  <span class="k">"startedAt"</span>: <span class="n">1793000000</span>,
+  <span class="k">"endedAt"</span>: <span class="n">1793007200</span>,
+  <span class="k">"startMeterWh"</span>: <span class="n">12540</span>,
+  <span class="k">"endMeterWh"</span>: <span class="n">12865</span>,
+  <span class="k">"energyDeliveredWh"</span>: <span class="n">325</span>,
+  <span class="k">"terminationReason"</span>: <span class="s">"USER_STOP"</span>,
+  <span class="k">"firmwareVersion"</span>: <span class="s">"0.1.0"</span>,
+  <span class="k">"deviceSignature"</span>: <span class="s">"..."</span>
+}</pre>
+      <div class="body-copy reveal" data-delay="1">
+        <span class="pill plan">Specification under community review</span>
+        <p style="margin-top:22px">One session object is the smallest useful unit of accountability: who authorised it, how much energy actually moved, and how it ended. Everything above it — reporting, revenue splits, sponsor dashboards — is derived, not re-measured.</p>
+        <p>The schema is open for comment before it is frozen. If you operate a fleet or run a PAYGo backend, the fields you need should be in it.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="wrap"><div class="divider"></div></div>
+
+<section id="build" data-screen-label="What you can build">
+  <div class="wrap">
+    <div class="section-head">
+      <p class="eyebrow reveal">08 · Use cases</p>
+      <h2 class="section-title reveal" data-delay="1">What you can build.</h2>
+    </div>
+    <div class="cards">
+      <div class="card reveal"><h3>PAYGo ownership</h3><p>Weekly or monthly payments that permanently unlock the device once fully paid.</p></div>
+      <div class="card reveal" data-delay="1"><h3>Community energy fleet</h3><p>Operators manage multiple eCandle units and rent them by the hour, by the day, or by service.</p></div>
+      <div class="card reveal" data-delay="2"><h3>Sponsor-funded access</h3><p>Sponsors fund the hardware, local users keep paying in cash or mobile money, and sponsors get transparent operating reports.</p></div>
+      <div class="card reveal" data-delay="3"><h3>Developer energy applications</h3><p>Build new energy applications on a real battery, inverter, meter and device-control interface.</p></div>
+      <div class="card reveal" data-delay="4"><h3>Productive-use energy</h3><p>Manageable power for small businesses, connectivity, digital work and other low-power productive loads.</p></div>
+    </div>
+  </div>
+</section>
+
+<section id="field" data-screen-label="Field applications">
+  <div class="wrap">
+    <div class="section-head">
+      <p class="eyebrow reveal">08b · Field applications</p>
+      <h2 class="section-title reveal" data-delay="1">Deployed where the grid is not.</h2>
+      <p class="lede reveal" data-delay="2">eCandle units are going into community solar programmes in Africa, where a single node serves lighting, phone charging, connectivity and small productive loads for a cluster of households.</p>
+    </div>
+    <div class="split wide-fig">
+      <div class="body-copy reveal">
+        <p>These deployments are what the programmable layer is for: local operators need to charge for energy in the payment method their customers already use, keep working when the network drops, and report honestly to whoever funded the hardware.</p>
+        <p>Each site is an integration test for the same three things — device authorisation, metered delivery, and a settlement record an operator and a sponsor can both read.</p>
+        <ul class="ticks done" style="margin-top:28px">
+          <li>Community solar programme, Africa — pilot deployment</li>
+          <li>Operator-run rental fleets</li>
+          <li>Sponsor-funded household access</li>
+          <li>Productive use: shops, connectivity, digital work</li>
+        </ul>
+      </div>
+      <div class="figure reveal" data-delay="1">
+        <img src="../../assets/p-field.jpg" alt="Community Solar Program for Africa — eCandle field deployment" />
+        <p class="figcap">Community Solar Program for Africa</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="boundary" data-screen-label="Open vs protected">
+  <div class="wrap">
+    <div class="section-head">
+      <p class="eyebrow reveal">09 · The open boundary</p>
+      <h2 class="section-title reveal" data-delay="1">Open where developers build.<br/>Protected where safety matters.</h2>
+      <p class="lede reveal" data-delay="2">Developers can build at the application and integration layer without bypassing the certified battery, inverter and protection systems.</p>
+    </div>
+    <div class="boundary">
+      <div class="bcol open reveal">
+        <span class="pill live"><span class="dot"></span>Openly programmable</span>
+        <h3>Open</h3>
+        <ul>
+          <li><span>ESP32 <b>application runtime</b></span></li>
+          <li><span>Documented <b>device interfaces</b></span></li>
+          <li><span>Authorisation and <b>energy session logic</b></span></li>
+          <li><span>Payment and <b>settlement adapters</b></span></li>
+          <li><span>Operator and <b>reporting integrations</b></span></li>
+        </ul>
+      </div>
+      <div class="bcol closed reveal" data-delay="1">
+        <span class="pill plan">Certified &amp; sealed</span>
+        <h3>Protected</h3>
+        <ul>
+          <li><span>Cell chemistry and <b>BMS firmware</b></span></li>
+          <li><span>Inverter <b>control firmware</b></span></li>
+          <li><span>Electrical <b>protection thresholds</b></span></li>
+          <li><span>Thermal and <b>safety cut-offs</b></span></li>
+          <li><span>Certification-bound <b>parameters (UN38.3 / CE)</b></span></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="night" id="developers" data-screen-label="Developer experience">
+  <div class="wrap">
+    <div class="section-head">
+      <p class="eyebrow reveal">10 · Developer experience</p>
+      <h2 class="section-title reveal" data-delay="1">From device to application.</h2>
+    </div>
+    <div class="stack">
+      <div class="stack-row reveal"><span class="lv">01</span><div><p class="t">Provision</p><p class="s">Claim the device over BLE or a local tool.</p></div></div>
+      <div class="stack-row reveal"><span class="lv">02</span><div><p class="t">Connect</p><p class="s">Choose OpenPAYGO, an operator backend, or the onchain adapter.</p></div></div>
+      <div class="stack-row reveal"><span class="lv">03</span><div><p class="t">Configure</p><p class="s">Set time, energy credit or service rules.</p></div></div>
+      <div class="stack-row reveal"><span class="lv">04</span><div><p class="t">Deploy</p><p class="s">Ship your application to the eCandle ESP32 runtime.</p></div></div>
+      <div class="stack-row app reveal"><span class="lv">05</span><div><p class="t">Operate</p><p class="s">Watch device state, energy sessions and settlement records.</p></div></div>
+    </div>
+    <div class="hero-actions reveal">
+      <a class="btn btn-primary" href="mailto:ecandle@arkreen.com?subject=eCandle%20Developer%20Preview">Join the developer preview
+        <svg viewBox="0 0 16 16" fill="none"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </a>
+      <a class="btn btn-ghost" href="#architecture">Read the architecture</a>
+      <span class="btn btn-disabled">GitHub — coming soon</span>
+    </div>
+  </div>
+</section>
+
+<section id="status" data-screen-label="Product status">
+  <div class="wrap">
+    <div class="section-head">
+      <p class="eyebrow reveal">11 · Product status</p>
+      <h2 class="section-title reveal" data-delay="1">What is real today.</h2>
+      <p class="lede reveal" data-delay="2">A programmable energy node is only credible if the boundary between shipped and planned is stated plainly.</p>
+    </div>
+    <div class="status">
+      <div class="scol reveal">
+        <span class="pill live"><span class="dot"></span>Available today</span>
+        <ul>
+          <li>eCandle 1 commercial hardware</li>
+          <li>1004Wh LFP storage</li>
+          <li>300W inverter</li>
+          <li>Embedded ESP32</li>
+          <li>Manufacturer device-control interface</li>
+          <li>iOS / Android application</li>
+          <li>Working onchain PAYGo prototype</li>
+        </ul>
+      </div>
+      <div class="scol reveal" data-delay="1">
+        <span class="pill dev"><span class="dot"></span>In development</span>
+        <ul>
+          <li>Open ESP32 application runtime</li>
+          <li>Hardware interface documentation</li>
+          <li>OpenPAYGO integration</li>
+          <li>Meter-data mapping</li>
+          <li>Device identity and signed session records</li>
+          <li>Developer SDK</li>
+        </ul>
+      </div>
+      <div class="scol reveal" data-delay="2">
+        <span class="pill plan">Roadmap</span>
+        <ul>
+          <li>PaygOps reference connector</li>
+          <li>Additional payment adapters</li>
+          <li>Operator Fleet Console</li>
+          <li>Compatible-device adapter framework</li>
+          <li>Community-developed applications</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="wrap"><div class="divider"></div></div>
+
+<section id="specs" data-screen-label="Specifications">
+  <div class="wrap">
+    <div class="section-head">
+      <p class="eyebrow reveal">12 · Specifications</p>
+      <h2 class="section-title reveal" data-delay="1">eCandle 1 — full specification.</h2>
+    </div>
+    <div class="specs reveal">
+      <details open>
+        <summary>Electrical<span class="plus">+</span></summary>
+        <dl>
+          <div class="row"><dt>Standard capacity</dt><dd>1004Wh</dd></div>
+          <div class="row"><dt>Cell chemistry</dt><dd>LiFePO₄</dd></div>
+          <div class="row"><dt>Cycle life</dt><dd>6,000+ cycles</dd></div>
+          <div class="row"><dt>AC input</dt><dd>90–280V · 45–65Hz · 300W max</dd></div>
+          <div class="row"><dt>PV input</dt><dd>12–60V · 200W max</dd></div>
+          <div class="row"><dt>AC output</dt><dd>110V or 220–240V regional · 50/60Hz · 300W max</dd></div>
+          <div class="row"><dt>USB-C</dt><dd>20W max</dd></div>
+          <div class="row"><dt>USB-A</dt><dd>2 ports · 10W each · 15W total</dd></div>
+          <div class="row"><dt>UPS switchover</dt><dd>10ms</dd></div>
+        </dl>
+      </details>
+      <details>
+        <summary>Physical<span class="plus">+</span></summary>
+        <dl>
+          <div class="row"><dt>Dimensions</dt><dd>290 × 168 × 248 mm</dd></div>
+          <div class="row"><dt>Weight</dt><dd>≈ 9 kg</dd></div>
+          <div class="row"><dt>Cooling</dt><dd>Air-cooled</dd></div>
+          <div class="row"><dt>Operating temperature</dt><dd>−10°C to 40°C</dd></div>
+          <div class="row"><dt>Storage temperature</dt><dd>−20°C to 70°C</dd></div>
+          <div class="row"><dt>Altitude</dt><dd>0–4000 m</dd></div>
+          <div class="row"><dt>Humidity</dt><dd>10–90%, non-condensing</dd></div>
+        </dl>
+      </details>
+      <details>
+        <summary>Connectivity &amp; compute<span class="plus">+</span></summary>
+        <dl>
+          <div class="row"><dt>Embedded controller</dt><dd>ESP32</dd></div>
+          <div class="row"><dt>Wireless</dt><dd>BLE · Wi-Fi</dd></div>
+          <div class="row"><dt>Cellular</dt><dd>Optional 4G</dd></div>
+          <div class="row"><dt>Application</dt><dd>iOS / Android</dd></div>
+          <div class="row"><dt>Subscription</dt><dd>None required</dd></div>
+        </dl>
+      </details>
+      <details>
+        <summary>Safety &amp; certification<span class="plus">+</span></summary>
+        <dl>
+          <div class="row"><dt>Input protection</dt><dd>Under / over-voltage</dd></div>
+          <div class="row"><dt>PV protection</dt><dd>Under / over-voltage</dd></div>
+          <div class="row"><dt>Charging</dt><dd>Current protection</dd></div>
+          <div class="row"><dt>Output</dt><dd>Short-circuit protection</dd></div>
+          <div class="row"><dt>Thermal</dt><dd>Over-temperature protection</dd></div>
+          <div class="row"><dt>Certification</dt><dd>UN38.3 · CE</dd></div>
+        </dl>
+      </details>
+    </div>
+    <p class="note reveal">eCandle 1 is the 1004Wh / 300W configuration. A higher-output <b>eCandle 1 Pro</b> is planned and will be published once its specification is confirmed.</p>
+  </div>
+</section>
+
+<section class="cta" data-screen-label="CTA">
+  <div class="wrap">
+    <p class="eyebrow reveal" style="justify-content:center">Get started</p>
+    <h2 class="display reveal" data-delay="1">Build on a real <span class="italic">energy device</span>.</h2>
+    <p class="lede reveal" data-delay="2">Developer units, interface documentation and the PAYGo demo are available to partners building energy-access applications.</p>
+    <div class="hero-actions reveal" data-delay="3">
+      <a class="btn btn-primary" href="mailto:ecandle@arkreen.com?subject=eCandle%20Developer%20Unit">Request a developer unit
+        <svg viewBox="0 0 16 16" fill="none"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </a>
+      <a class="btn btn-ghost" href="../../">Back to eCandle overview</a>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap foot">
+    <div>© 2026 Arkreen · eCandle 1 — commercial-grade, openly programmable energy node</div>
+    <div class="foot-links">
+      <a href="../../">eCandle overview</a>
+      <a href="https://www.arkreen.com" target="_blank" rel="noopener">Arkreen</a>
+      <a href="https://x.com/arkreen_network" target="_blank" rel="noopener">X</a>
+      <a href="https://discord.gg/arkreen" target="_blank" rel="noopener">Discord</a>
+    </div>
+  </div>
+</footer>
+
+<script>
+const nav=document.getElementById('nav');
+const sy=()=>scrollY||document.documentElement.scrollTop||document.body.scrollTop||0;
+const navUpd=()=>nav.classList.toggle('scrolled',sy()>20);
+addEventListener('scroll',navUpd,{passive:true});
+document.addEventListener('scroll',navUpd,{passive:true,capture:true});
+const items=[...document.querySelectorAll('.reveal')];
+
+const show=el=>{if(el.classList.contains('in'))return;const d=+(el.dataset.delay||0);setTimeout(()=>el.classList.add('in'),d*90);};
+const sweep=()=>{const h=innerHeight;items.forEach(el=>{const r=el.getBoundingClientRect();if(r.top<h*0.94&&r.bottom>0)show(el);});};
+if('IntersectionObserver' in window){
+  const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){show(e.target);io.unobserve(e.target);}}),{threshold:.12,rootMargin:'0px 0px -8%'});
+  items.forEach(el=>io.observe(el));
+}
+requestAnimationFrame(sweep);
+addEventListener('scroll',sweep,{passive:true});
+document.addEventListener('scroll',sweep,{passive:true,capture:true});
+addEventListener('resize',sweep,{passive:true});
+setTimeout(()=>items.forEach(el=>el.classList.add('in')),1800);
+</script>
+</body>
+</html>

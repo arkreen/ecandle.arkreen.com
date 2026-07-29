@@ -104,9 +104,8 @@ h1, h2, h3 { font-family: var(--font-display); font-weight: 400; line-height: 1.
 .nav { position: fixed; top: 0; left: 0; right: 0; z-index: 50; transition: background .3s, border-color .3s, backdrop-filter .3s; border-bottom: 1px solid transparent; }
 .nav.scrolled { background: color-mix(in oklch, var(--paper) 82%, transparent); backdrop-filter: blur(14px) saturate(1.2); border-bottom-color: var(--line-soft); }
 .nav-inner { display: flex; align-items: center; justify-content: space-between; height: 74px; }
-.brand { display: inline-flex; align-items: center; gap: 11px; }
-.brand-arkreen, .brand-home { display: inline-flex; align-items: center; gap: 11px; color: inherit; font-family: var(--font-display); font-weight: 400; font-size: 24px; letter-spacing: -0.01em; }
-.brand-logo { height: 40px; width: auto; display: block; }
+.brand { display: inline-flex; align-items: center; gap: 11px; font-family: var(--font-display); font-weight: 400; font-size: 24px; letter-spacing: -0.01em; }
+.brand-logo { height: 22px; width: auto; display: block; }
 .brand-mark { height: 23px; width: auto; display: block; }
 .brand-div { width: 1px; height: 19px; background: var(--line); display: inline-block; }
 .brand-name { font-family: var(--font-display); }
