@@ -17,16 +17,13 @@
 .kits-hero-copy .hero-actions { margin-top: 34px; }
 .kits-hero-copy .spec-strip { margin-top: 30px; }
 
-.kits-hero-visual { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; align-items: start; }
+.kits-hero-visual { display: grid; grid-template-columns: 1fr; gap: 16px; align-content: center; }
 .kits-hero-shot { margin: 0; border-radius: var(--radius); overflow: hidden; border: 1px solid var(--line); position: relative; box-shadow: 0 34px 70px -42px rgba(24,36,32,.55); }
-.kits-hero-shot img { display: block; width: 100%; height: auto; aspect-ratio: 4/5; object-fit: cover; }
+.kits-hero-shot img { display: block; width: 100%; height: auto; }
 .kits-hero-shot figcaption { position: absolute; left: 14px; bottom: 12px; color: #faf8f3; background: color-mix(in oklch, #182420 72%, transparent); padding: 5px 12px; border-radius: 100px; backdrop-filter: blur(6px); }
-.kits-hero-shot:nth-child(2) { margin-top: 36px; }
 @media (max-width: 920px) {
   .kits-hero-grid { grid-template-columns: 1fr; }
-  .kits-hero-visual { grid-template-columns: 1fr; gap: 14px; margin-top: 8px; }
-  .kits-hero-shot:nth-child(2) { margin-top: 0; }
-  .kits-hero-shot img { aspect-ratio: 16/9; }
+  .kits-hero-visual { gap: 14px; margin-top: 8px; }
 }
 
 /* ---------- kit cards ---------- */
