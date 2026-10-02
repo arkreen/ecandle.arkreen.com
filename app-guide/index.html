@@ -84,15 +84,16 @@
   <div class="wrap">
     <p class="eyebrow">Customers</p>
         <h2>Send the credit over Bluetooth</h2>
-        <p class="dim">Some devices have no internet. Your phone carries the credit to the device.</p>
+        <p class="dim">Some devices have no WiFi. Your phone carries the credit to the device. Your phone needs internet; the device does not.</p>
         <ol class="steps">
           <li><div>Stand next to the device. Bluetooth must be on.</div></li>
-          <li><div>Tap <b>Send credit over Bluetooth</b>, then <b>Find the device</b>.
+          <li><div>Tap <b>Send credit over Bluetooth</b>.
             <small>The first time, Android asks for permission to find nearby devices. Tap <b>Allow</b>.</small></div></li>
-          <li><div>A list appears. Tap the name that starts with <code>PAYGO-</code>. The closest device is listed first.</div></li>
-          <li><div>When the screen shows the device and your credit, tap <b>Send 1 credit</b>.</div></li>
+          <li><div>Wait. The app finds the device and sends the credit by itself.
+            <small>If several devices are nearby, a list appears. Tap the name that starts with <code>PAYGO-</code>. The closest is listed first.</small></div></li>
           <li><div>You are done when you see <b>All credit delivered</b> and the time starts counting down.</div></li>
         </ol>
+        <p class="dim">If it stops part-way, tap <b>Find the device</b> to try again.</p>
         <div class="safe">
           <span class="mono-label">Your credit is safe</span>
           <p>It stays on the server until the device receives it. Closing the app, losing signal or a flat battery does not lose it. Come back to the device, open <b>My payments</b>, open the order and send it again.</p>
@@ -107,7 +108,7 @@
         <h2>Pay with cash</h2>
         <ol class="steps">
           <li><div>Choose your time and tap <b>Pay</b>, but do not pay on the payment page. Come back to the app.</div></li>
-          <li><div>On the <b>Payment</b> screen tap <b>Pay cash to an agent</b>. An 8-character code appears.</div></li>
+          <li><div>On the <b>Payment</b> screen, look under <b>Or pay with cash</b>. There is an 8-character code.</div></li>
           <li><div>Show the code to your local eCandle agent and pay them. They confirm it on their phone and your screen changes by itself.</div></li>
         </ol>
   </div>
@@ -147,9 +148,18 @@
         <p class="note warn">Only confirm after you have the cash in your hand. Confirming gives the customer their power and records the amount against your account.</p>
         <p class="note">If the app says the order <b>was already paid</b> through another channel, do not take cash for it. The customer has already paid online.</p>
 
+        <h3>Send credit to a device for a customer</h3>
+        <p>Some devices have no WiFi. They only get their credit from a phone over Bluetooth. That can be the customer's phone or yours.</p>
+        <ol class="steps">
+          <li><div>After you confirm cash for one of these devices, the app shows <b>Send credit over Bluetooth</b>. Stand next to the device and tap it.
+            <small>Or open <b>My devices</b>, tap the device, and tap <b>Send credit over Bluetooth</b>.</small></div></li>
+          <li><div>Wait. The app finds the device and sends the credit by itself.</div></li>
+          <li><div>You are done when you see <b>All credit delivered</b>.</div></li>
+        </ol>
+
         <h3>Check your devices</h3>
-        <p><b>My devices</b> lists every device with its status and battery level. Offline devices are at the top. Tap a device to see battery, power in and out, and WiFi signal. Pull down to refresh.</p>
-        <p class="dim">A device that works over Bluetooth may have no internet. It then shows Offline here even though it is working. That is normal.</p>
+        <p><b>My devices</b> lists every device with its status and battery level. Devices with a problem are at the top. Tap a device to see battery, power in and out, and WiFi signal. Pull down to refresh.</p>
+        <p class="dim">A device that works over Bluetooth shows <b>Bluetooth</b> instead of Online. Tap it, then <b>Check device over Bluetooth</b>, to see how much time is left on it.</p>
 
         <h3>See payments</h3>
         <p><b>Payments</b> lists every payment on your devices. Filter with <b>Paid</b>, <b>Waiting</b>, <b>Expired</b> or <b>All</b>. Tap a payment to open the transaction on the block explorer. Cash payments show <code>cash</code>.</p>
