@@ -1,0 +1,56 @@
+/* ============================================================
+   eCandle — app field guide subpage. Extends ../styles.css.
+   Read on a phone, one-handed, next to a device: one narrow column,
+   numbered steps per task, "you see → do this" pairs for problems.
+   ============================================================ */
+
+.guide-hero { padding-top: clamp(112px, 16vh, 170px); padding-bottom: clamp(8px, 2vh, 24px); }
+.guide-hero .display { font-size: clamp(40px, 6.4vw, 72px); }
+.guide-hero .lede { margin-top: 22px; }
+
+.guide-jump { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 28px; }
+.guide-jump a {
+  font-family: var(--font-mono); font-size: 12px; letter-spacing: 0.06em; text-transform: uppercase; font-weight: 500;
+  color: var(--ink); background: var(--paper-3); border-radius: 100px; padding: 8px 14px; transition: background .2s, color .2s;
+}
+.guide-jump a:hover, .guide-jump a:focus-visible { background: var(--accent); color: var(--paper); }
+
+/* the site's sections are landing-page tall; a manual needs them tight */
+section.guide { padding-block: clamp(36px, 6vh, 64px); scroll-margin-top: 72px; }
+section.guide .wrap { max-width: 760px; }
+.guide h2 { font-family: var(--font-display); font-weight: 400; font-size: clamp(30px, 4.4vw, 44px); line-height: 1.08; margin: 12px 0 0; text-wrap: balance; }
+.guide h3 { font-family: var(--font-body); font-weight: 600; font-size: 18px; margin: 34px 0 0; }
+.guide p { margin: 16px 0 0; max-width: 62ch; font-size: 16.5px; line-height: 1.6; }
+.guide .dim { color: var(--ink-dim); }
+
+/* a control in the app, named exactly as it appears on screen */
+.guide b { font-weight: 600; white-space: nowrap; }
+.guide code { font-family: var(--font-mono); font-size: 0.9em; background: var(--paper-3); border-radius: 6px; padding: 1px 6px; }
+
+.steps { list-style: none; margin: 22px 0 0; padding: 0; display: flex; flex-direction: column; gap: 14px; counter-reset: step; }
+.steps > li { counter-increment: step; display: grid; grid-template-columns: 30px 1fr; gap: 14px; align-items: start; font-size: 16.5px; line-height: 1.55; }
+.steps > li::before {
+  content: counter(step); font-family: var(--font-mono); font-size: 13px; font-weight: 500;
+  width: 30px; height: 30px; border-radius: 50%; display: grid; place-items: center;
+  background: var(--accent); color: var(--paper);
+}
+.steps > li > div { min-width: 0; padding-top: 2px; }
+.steps small { display: block; color: var(--ink-dim); font-size: 14.5px; margin-top: 4px; }
+
+.outcomes { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin-top: 24px; }
+.outcomes > div { background: var(--paper-2); border: 1px solid var(--line); border-radius: var(--radius); padding: 16px 18px; font-size: 15.5px; line-height: 1.5; }
+.outcomes strong { display: block; font-weight: 600; margin-bottom: 4px; }
+@media (max-width: 560px) { .outcomes { grid-template-columns: 1fr; } }
+
+.guide .note { background: var(--paper-2); border: 1px solid var(--line); border-radius: var(--radius); padding: 14px 16px; font-size: 15.5px; }
+.guide .note.warn { background: color-mix(in oklch, var(--amber) 16%, var(--paper)); border-color: color-mix(in oklch, var(--amber) 45%, transparent); }
+
+.safe { background: #182420; color: #faf8f3; border-radius: 14px; padding: 22px 24px; margin-top: 26px; }
+.safe .mono-label { color: #e8a33c; }
+.safe p { color: #faf8f3; margin-top: 10px; font-size: 16px; }
+
+.fixes { margin: 22px 0 0; }
+.fixes > div { padding-block: 16px; border-top: 1px solid var(--line); display: grid; gap: 4px; }
+.fixes > div:last-child { border-bottom: 1px solid var(--line); }
+.fixes dt { font-weight: 600; font-size: 16.5px; }
+.fixes dd { margin: 0; color: var(--ink-dim); font-size: 16px; line-height: 1.55; }

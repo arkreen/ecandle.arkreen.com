@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en" data-accent="amber" data-mode="light">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>eCandle — App Field Guide</title>
+<meta name="description" content="How to use the eCandle Android app: pay for power, send credit to a device over Bluetooth, pay with cash, and run the operator console." />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet" />
+<link rel="icon" href="../brand/assets/favicon.svg" type="image/svg+xml" />
+<link rel="icon" href="../brand/assets/favicon-32.png" sizes="32x32" type="image/png" />
+<link rel="icon" href="../brand/assets/favicon-16.png" sizes="16x16" type="image/png" />
+<link rel="apple-touch-icon" href="../brand/assets/apple-touch-icon-180.png" />
+<link rel="stylesheet" href="../styles.css" />
+<link rel="stylesheet" href="guide.css" />
+</head>
+<body>
+
+<!-- ============ NAV ============ -->
+<nav class="nav" id="nav">
+  <div class="wrap nav-inner">
+    <span class="brand"><a class="brand-arkreen" href="https://www.arkreen.com" target="_blank" rel="noopener"><img class="brand-logo" src="https://www.arkreen.com/icon/arkreen-01.svg" alt="Arkreen" width="115" height="24" /></a><span class="brand-div"></span><a class="brand-self" href="../"><img class="brand-mark" src="../brand/assets/ecandle-mark-color.svg" alt="" width="22" height="22" /><span class="brand-name">e<em>Candle</em></span></a></span>
+    <div class="nav-links">
+      <a href="#pay">Pay for power</a>
+      <a href="#bluetooth">Bluetooth</a>
+      <a href="#cash">Cash</a>
+      <a href="#problems">Problems</a>
+      <a href="#operators">Operators</a>
+    </div>
+  </div>
+</nav>
+
+<!-- ============ HERO ============ -->
+<header class="hero guide-hero" id="top">
+  <div class="wrap">
+    <p class="eyebrow">App field guide</p>
+    <h1 class="display">Using the eCandle <span class="glow-word">app</span>.</h1>
+    <p class="lede">For customers, agents and operators in the pilot. Android only for now. Button names are written exactly as they appear in the app.</p>
+    <div class="guide-jump" aria-label="Sections">
+      <a href="#install">Install</a>
+      <a href="#pay">Pay for power</a>
+      <a href="#bluetooth">Bluetooth</a>
+      <a href="#cash">Cash</a>
+      <a href="#problems">Problems</a>
+      <a href="#operators">Operators</a>
+    </div>
+  </div>
+</header>
+
+<section class="guide" id="install">
+  <div class="wrap">
+    <p class="eyebrow">Everyone</p>
+        <h2>Install the app</h2>
+        <ol class="steps">
+          <li><div>Open the install link you were sent, in Chrome on your Android phone.</div></li>
+          <li><div>Download the file, then open it.</div></li>
+          <li><div>If Android says the install is blocked, tap <b>Settings</b>, allow installs from Chrome, go back and tap <b>Install</b>.</div></li>
+        </ol>
+        <p class="dim">When a new version is sent to you, install it the same way. It replaces the old one and keeps your payment history.</p>
+  </div>
+</section>
+
+<section class="guide" id="pay">
+  <div class="wrap">
+    <p class="eyebrow">Customers</p>
+        <h2>Pay for power</h2>
+        <p class="dim">You do not need an account.</p>
+        <ol class="steps">
+          <li><div>Tap <b>Scan device code</b> and point the camera at the code on the device.
+            <small>No camera? Type the code printed on the device, for example <code>KAN-1</code>, and tap <b>Go</b>.</small></div></li>
+          <li><div>Choose how long you want power: 15 min, 30 min, 1 hour or 2 hours. The price appears under <b>You pay</b>.</div></li>
+          <li><div>Tap <b>Pay</b>. The payment page opens. Pay with your wallet, then come back to the app.</div></li>
+          <li><div>Wait on the <b>Payment</b> screen. It updates by itself, usually in under a minute.</div></li>
+        </ol>
+        <div class="outcomes">
+          <div><strong>Device with internet</strong>The screen shows <b>Power is on</b> and counts down the time you bought.</div>
+          <div><strong>Device without internet</strong>The screen shows <b>One more step</b>. Send the credit over Bluetooth, below.</div>
+        </div>
+  </div>
+</section>
+
+<section class="guide" id="bluetooth">
+  <div class="wrap">
+    <p class="eyebrow">Customers</p>
+        <h2>Send the credit over Bluetooth</h2>
+        <p class="dim">Some devices have no internet. Your phone carries the credit to the device.</p>
+        <ol class="steps">
+          <li><div>Stand next to the device. Bluetooth must be on.</div></li>
+          <li><div>Tap <b>Send credit over Bluetooth</b>, then <b>Find the device</b>.
+            <small>The first time, Android asks for permission to find nearby devices. Tap <b>Allow</b>.</small></div></li>
+          <li><div>A list appears. Tap the name that starts with <code>PAYGO-</code>. The closest device is listed first.</div></li>
+          <li><div>When the screen shows the device and your credit, tap <b>Send 1 credit</b>.</div></li>
+          <li><div>You are done when you see <b>All credit delivered</b> and the time starts counting down.</div></li>
+        </ol>
+        <div class="safe">
+          <span class="mono-label">Your credit is safe</span>
+          <p>It stays on the server until the device receives it. Closing the app, losing signal or a flat battery does not lose it. Come back to the device, open <b>My payments</b>, open the order and send it again.</p>
+          <p>Unplugging the device pauses the countdown. You do not lose time you paid for.</p>
+        </div>
+  </div>
+</section>
+
+<section class="guide" id="cash">
+  <div class="wrap">
+    <p class="eyebrow">Customers</p>
+        <h2>Pay with cash</h2>
+        <ol class="steps">
+          <li><div>Choose your time and tap <b>Pay</b>, but do not pay on the payment page. Come back to the app.</div></li>
+          <li><div>On the <b>Payment</b> screen tap <b>Pay cash to an agent</b>. An 8-character code appears.</div></li>
+          <li><div>Show the code to your local eCandle agent and pay them. They confirm it on their phone and your screen changes by itself.</div></li>
+        </ol>
+  </div>
+</section>
+
+<section class="guide" id="problems">
+  <div class="wrap">
+    <p class="eyebrow">Customers</p>
+        <h2>If something goes wrong</h2>
+        <dl class="fixes">
+          <div><dt>Device not found</dt><dd>Check the code and scan again.</dd></div>
+          <div><dt>Payment timed out</dt><dd>You did not pay within 10 minutes. Tap <b>Try again</b>. If you did pay, keep the screen open. Paid orders are recovered automatically.</dd></div>
+          <div><dt>Bluetooth is turned off</dt><dd>Tap <b>Open Bluetooth settings</b>, turn it on, come back and tap <b>Find the device</b>.</dd></div>
+          <div><dt>No device found</dt><dd>Make sure the device is switched on and you are within a few metres. Tap <b>Search again</b>.</dd></div>
+          <div><dt>Wrong device</dt><dd>You connected to a different device from the one you paid for. Tap <b>Choose another device</b>. Nothing was sent.</dd></div>
+          <div><dt>The connection to the device was lost</dt><dd>Move closer and tap <b>Find the device</b> again. Your credit is safe.</dd></div>
+          <div><dt>No response from the device</dt><dd>Move closer and send again. Nothing was lost.</dd></div>
+          <div><dt>Too many failed attempts, the device is locked</dt><dd>Wait for the time shown, then try again.</dd></div>
+          <div><dt>The power did not come on</dt><dd>Open the device again and tap <b>Report a problem</b>.</dd></div>
+        </dl>
+  </div>
+</section>
+
+<section class="guide" id="operators">
+  <div class="wrap">
+    <p class="eyebrow">Agents and operators</p>
+        <h2>The operator console</h2>
+        <p>Tap <b>Operator sign-in</b> at the bottom of the home screen and sign in with your operator account. You only see your own devices, orders and tickets. You stay signed in until you tap <b>Sign out</b>.</p>
+
+        <h3>Confirm a cash payment</h3>
+        <ol class="steps">
+          <li><div>The customer shows you the 8-character code on their phone.</div></li>
+          <li><div>Open <b>Cash payments</b> and type the code in the search box.</div></li>
+          <li><div>Check the amount and the device. Take the cash.</div></li>
+          <li><div>Tap the order, then <b>Yes, I received $…</b></div></li>
+        </ol>
+        <p class="note warn">Only confirm after you have the cash in your hand. Confirming gives the customer their power and records the amount against your account.</p>
+        <p class="note">If the app says the order <b>was already paid</b> through another channel, do not take cash for it. The customer has already paid online.</p>
+
+        <h3>Check your devices</h3>
+        <p><b>My devices</b> lists every device with its status and battery level. Offline devices are at the top. Tap a device to see battery, power in and out, and WiFi signal. Pull down to refresh.</p>
+        <p class="dim">A device that works over Bluetooth may have no internet. It then shows Offline here even though it is working. That is normal.</p>
+
+        <h3>See payments</h3>
+        <p><b>Payments</b> lists every payment on your devices. Filter with <b>Paid</b>, <b>Waiting</b>, <b>Expired</b> or <b>All</b>. Tap a payment to open the transaction on the block explorer. Cash payments show <code>cash</code>.</p>
+
+        <h3>Handle tickets</h3>
+        <p class="dim">Customers report problems from the device screen. The reports arrive under <b>Tickets</b>.</p>
+        <ol class="steps">
+          <li><div><b>Open</b> holds new reports. Tap <b>Start</b> when you begin working on one.</div></li>
+          <li><div>Under <b>In progress</b>, tap <b>Mark as done…</b>, write what you did, then tap <b>Mark as done</b>.</div></li>
+          <li><div><b>Done</b> keeps finished reports with your note.</div></li>
+        </ol>
+        <p>If the customer left a phone number or email, tap <b>Contact</b> to call or write to them. A report marked <b>Overdue</b> has waited too long. Handle it first.</p>
+  </div>
+</section>
+
+<section class="guide" id="help">
+  <div class="wrap">
+    <p class="eyebrow">Everyone</p>
+    <h2>Getting help</h2>
+    <p>Send the eCandle team the device code, what you tapped, and a screenshot of the screen. Include the lines of small text at the bottom of the Bluetooth screen. They tell us exactly what the device answered.</p>
+  </div>
+</section>
+
+<!-- ============ FOOTER ============ -->
+<footer class="footer">
+  <div class="wrap">
+    <div class="footer-bottom" style="margin-top:0; border-top:none; padding-top:0;">
+      <span class="mono-label">© 2026 eCandle · Built on Arkreen</span>
+      <span class="mono-label"><a href="../">← Back to ecandle.arkreen.com</a></span>
+    </div>
+  </div>
+</footer>
+
+<script src="../app.js"></script>
+
+</body>
+</html>
