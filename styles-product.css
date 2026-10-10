@@ -51,6 +51,7 @@ p{text-wrap:pretty}
 .nav-links a{font-size:13.5px;color:var(--ink-dim);white-space:nowrap}
 .nav-links a:hover{color:var(--ink)}
 @media (max-width:1180px){.nav-links{display:none}}
+@media (max-width:480px){.brand-self span{display:none}.nav-inner>.btn{padding:9px 14px;font-size:13px}.nav-btn-long{display:none}}
 
 section{position:relative;padding-block:clamp(70px,10vh,132px)}
 .section-head{max-width:74ch}

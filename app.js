@@ -126,6 +126,18 @@
   }
   setActive(0);
 
+  /* ---- film: click-to-play with sound, native controls after start ---- */
+  var film = document.getElementById("film-video");
+  var filmPlay = document.getElementById("film-play");
+  if (film && filmPlay) {
+    filmPlay.addEventListener("click", function () {
+      film.parentNode.classList.add("playing");
+      film.controls = true;
+      var p = film.play();
+      if (p && p.catch) p.catch(function () {});
+    });
+  }
+
   /* ---- smooth-scroll active nav link ---- */
   var navLinks = Array.prototype.slice.call(document.querySelectorAll(".nav-links a[href^='#']"));
   var sections = navLinks.map(function (a) {
