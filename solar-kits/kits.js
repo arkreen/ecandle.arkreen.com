@@ -43,6 +43,18 @@
     setTimeout(function () { reveals.forEach(forceShow); }, 3000);
   }
 
+  /* ---- film: click-to-play with sound (same contract as ../app.js) ---- */
+  var film = document.getElementById("film-video");
+  var filmPlay = document.getElementById("film-play");
+  if (film && filmPlay) {
+    filmPlay.addEventListener("click", function () {
+      film.parentNode.classList.add("playing");
+      film.controls = true;
+      var p = film.play();
+      if (p && p.catch) p.catch(function () {});
+    });
+  }
+
   /* ---- mobile sticky bar: show after the hero, hide near final CTA ---- */
   var stickyBar = document.getElementById("stickyBar");
   var hero = document.querySelector(".kits-hero");
