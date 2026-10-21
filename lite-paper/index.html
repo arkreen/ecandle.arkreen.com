@@ -1,0 +1,358 @@
+<!DOCTYPE html>
+<html lang="en" data-accent="amber" data-mode="light">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>eCandle Lite Paper — When the lights come on, the cashflow starts</title>
+<meta name="description" content="The eCandle lite paper: why off-grid energy demand and on-chain capital never meet, what an eCandle node is, and how one closed loop turns everyday power use into open, programmable cashflow." />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=IBM+Plex+Sans:ital,wght@0,400;0,500;0,600;1,400&family=IBM+Plex+Mono:wght@400;500&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet" />
+<link rel="icon" href="../brand/assets/favicon.svg" type="image/svg+xml" />
+<link rel="icon" href="../brand/assets/favicon-32.png" sizes="32x32" type="image/png" />
+<link rel="icon" href="../brand/assets/favicon-16.png" sizes="16x16" type="image/png" />
+<link rel="apple-touch-icon" href="../brand/assets/apple-touch-icon-180.png" />
+<link rel="stylesheet" href="../styles.css?v=20261021" />
+<link rel="stylesheet" href="lite.css?v=20261021" />
+</head>
+<body>
+
+<div class="lp-progress" aria-hidden="true"><span id="lp-progress"></span></div>
+
+<!-- ============ NAV ============ -->
+<nav class="nav" id="nav">
+  <div class="wrap nav-inner">
+    <span class="brand"><a class="brand-arkreen" href="https://www.arkreen.com" target="_blank" rel="noopener"><img class="brand-logo" src="https://www.arkreen.com/icon/arkreen-01.svg" alt="Arkreen" width="115" height="24" /></a><span class="brand-div"></span><a class="brand-self" href="../"><img class="brand-mark" src="../brand/assets/ecandle-mark-color.svg" alt="" width="22" height="22" /><span class="brand-name">e<em>Candle</em></span></a></span>
+    <div class="nav-links">
+      <a href="#why">Why</a>
+      <a href="#what">What</a>
+      <a href="#how">How</a>
+      <a href="#proof">Proof</a>
+      <a href="#join">Join</a>
+    </div>
+    <div class="nav-cta">
+      <a class="btn btn-primary" href="#join">Get involved
+        <svg viewBox="0 0 16 16" fill="none"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </a>
+    </div>
+  </div>
+</nav>
+
+<!-- ============ COVER ============ -->
+<header class="lp-cover" id="top">
+  <div class="wrap lp-cover-grid">
+   <div>
+    <p class="eyebrow">eCandle lite paper · v1.0 · October 2026</p>
+    <h1 class="display">When the lights come on, the <span class="glow-word">cashflow</span> starts.</h1>
+    <p class="lede">eCandle turns the smallest unit of energy access, one solar battery serving one home or one shop, into a standard, measurable, fundable asset. This paper explains why that gap exists, what an eCandle node is, and how one closed loop connects global capital to real, daily demand.</p>
+    <div class="lp-meta">
+      <span class="mono-label">≈ 10 min read</span>
+      <span class="mono-label">Published by Arkreen Network</span>
+      <button type="button" class="btn btn-ghost lp-print" id="lp-print">Save as PDF
+        <svg viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M8 2.5v8M4.5 7 8 10.5 11.5 7M3 13.5h10" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </button>
+    </div>
+   </div>
+    <figure class="lp-cover-art" aria-hidden="true">
+      <div class="lp-cover-glow"></div>
+      <img src="../assets/p-hero.webp" width="1400" height="1400" alt="" />
+    </figure>
+  </div>
+</header>
+
+<div class="wrap lp-layout">
+
+  <!-- ============ TOC ============ -->
+  <aside class="lp-toc" aria-label="Contents">
+    <p class="mono-label">Contents</p>
+    <ol>
+      <li><a href="#minute"><span>00</span> In one minute</a></li>
+      <li><a href="#why"><span>01</span> Why: two needs, one gap</a></li>
+      <li><a href="#what"><span>02</span> What: a standard unit of access</a></li>
+      <li><a href="#how"><span>03</span> How: one closed loop</a></li>
+      <li><a href="#proof"><span>04</span> Proof: already running</a></li>
+      <li><a href="#bigger"><span>05</span> Why this is bigger</a></li>
+      <li><a href="#join"><span>06</span> Join the loop</a></li>
+      <li><a href="#notes"><span>—</span> Notes &amp; disclaimer</a></li>
+    </ol>
+  </aside>
+
+  <main class="lp-doc">
+
+    <!-- ============ 00 ============ -->
+    <section class="lp-sec" id="minute">
+      <p class="lp-num">00 · In one minute</p>
+      <h2>The short version.</h2>
+      <dl class="lp-tldr">
+        <div><dt>Why</dt><dd>655 million people still live without electricity. Capital looking for real-world yield can't reach them, because small, scattered energy assets are invisible, costly to service and hard to trust.</dd></div>
+        <div><dt>What</dt><dd>eCandle is a standardized energy node: solar generation, battery storage, metered pay-as-you-go access and a programmable device layer that records every unit of service it delivers.</dd></div>
+        <div><dt>How</dt><dd>Capital builders fund units, local operators deploy and run them, people pay for the power they actually use, and smart contracts record and split the revenue in the open.</dd></div>
+        <div><dt>Proof</dt><dd>It's live today at TAS Hub in Awka, Nigeria, built on the Arkreen network of 300,000+ distributed energy nodes.</dd></div>
+      </dl>
+    </section>
+
+    <!-- ============ 01 WHY ============ -->
+    <section class="lp-sec" id="why">
+      <p class="lp-num">01 · Why</p>
+      <h2>Two needs, one gap.</h2>
+      <p class="lp-lead">Picture two maps of the world. The first shows where capital sits: deep markets, cheap money and a growing pool of on-chain liquidity looking for something real to do. The second shows where energy demand is most urgent: homes that go dark at sunset, shops that close early, students who can't charge a laptop. The two maps barely overlap.</p>
+
+      <figure class="lp-fig">
+        <svg class="lp-diagram" viewBox="0 0 720 250" role="img" aria-labelledby="gapTitle gapDesc">
+          <title id="gapTitle">The capital and demand mismatch</title>
+          <desc id="gapDesc">On the left, capital is abundant where energy demand is already met. On the right, demand is strongest where capital is scarce. eCandle sits in the middle as the bridge.</desc>
+          <rect class="d-card" x="10" y="20" width="250" height="210" rx="10"/>
+          <text class="d-label" x="34" y="56">SUPPLY SIDE</text>
+          <text class="d-big" x="34" y="112">Capital ↑</text>
+          <text class="d-body" x="34" y="150">Abundant and liquid,</text>
+          <text class="d-body" x="34" y="172">but concentrated where</text>
+          <text class="d-body" x="34" y="194">power is already solved.</text>
+          <rect class="d-card" x="460" y="20" width="250" height="210" rx="10"/>
+          <text class="d-label d-amber" x="484" y="56">DEMAND SIDE</text>
+          <text class="d-big d-amber" x="484" y="112">Demand ↑</text>
+          <text class="d-body" x="484" y="150">Daily and urgent,</text>
+          <text class="d-body" x="484" y="172">but far from the capital</text>
+          <text class="d-body" x="484" y="194">that could serve it.</text>
+          <line class="d-wire" x1="260" y1="125" x2="460" y2="125"/>
+          <circle class="d-node" cx="360" cy="125" r="50"/>
+          <text class="d-node-t" x="360" y="121" text-anchor="middle">eCandle</text>
+          <text class="d-node-s" x="360" y="140" text-anchor="middle">BRIDGE</text>
+        </svg>
+      </figure>
+
+      <div class="lp-facts">
+        <div><b>655M</b><span>people without electricity worldwide in 2024<sup><a href="#n1">1</a></sup></span></div>
+        <div><b>563M</b><span>of them in Sub-Saharan Africa<sup><a href="#n1">1</a></sup></span></div>
+        <div><b>86%</b><span>of the global access gap, in one region<sup><a href="#n1">1</a></sup></span></div>
+      </div>
+      <p>Nigeria, where eCandle's first live hub runs, is one of the three countries that together hold nearly a third of the world's access gap.<sup><a href="#n1">1</a></sup> Meanwhile, stablecoins now move value across borders at internet speed, and they still need a credible path from on-chain liquidity to real-world use. Here are two needs that should fit together, and they sit on opposite sides of a gap.</p>
+
+      <h3>Why the gap doesn't close on its own</h3>
+      <p>Solar panels and batteries are not the problem. They are cheap, proven and getting better every year. The problem is everything around them.</p>
+      <ul class="lp-list">
+        <li><b>Too small to see.</b> One household's power spend is a few cents a day. To distant capital, ten thousand of those look like noise, not an asset.</li>
+        <li><b>Too costly to collect.</b> Gathering tiny payments, reconciling them by hand and reporting to funders eats most of the margin.</li>
+        <li><b>Too hard to trust.</b> A funder abroad can't see whether a unit exists, works or earns, so they assume the worst or stay away.</li>
+        <li><b>Too thin to start.</b> The local operators best placed to run an energy business rarely have the capital to buy their first units.</li>
+      </ul>
+
+      <h3>The unlock</h3>
+      <p>Each of these is a <em>legibility</em> problem. Energy access becomes fundable the moment its smallest unit is <b>standard</b> enough to replicate, <b>instrumented</b> enough to measure and <b>programmable</b> enough to settle by itself. eCandle is built to be that unit.</p>
+    </section>
+
+    <!-- ============ 02 WHAT ============ -->
+    <section class="lp-sec" id="what">
+      <p class="lp-num">02 · What</p>
+      <h2>A standardized unit of energy access.</h2>
+      <p class="lp-lead">An eCandle node is one physical product that does five jobs. Together they turn electricity into a service that can be sold in tiny amounts, delivered reliably and recorded honestly.</p>
+
+      <ol class="lp-parts">
+        <li><span>01</span><div><b>Solar generation</b>Captures energy where it's needed, with no grid connection.</div></li>
+        <li><span>02</span><div><b>Battery storage</b>Holds that power for lighting, charging and small-business loads after dark.</div></li>
+        <li><span>03</span><div><b>Pay-as-you-go access</b>Metered, smart output lets people pay small amounts, by the charge, by the hour or by shared use.</div></li>
+        <li><span>04</span><div><b>Local operations</b>Installed and maintained by local operators who own the relationship with their community.</div></li>
+        <li><span>05</span><div><b>On-chain settlement</b>Payments flow into smart contracts, with no central billing and no manual reconciliation.</div></li>
+      </ol>
+
+      <blockquote class="lp-pull">It is not just a solar battery. It is a programmable energy revenue node, a real-world use for stablecoins that people need every single day.</blockquote>
+
+      <h3>eCandle 1: the hardware</h3>
+      <figure class="lp-fig lp-fig-split">
+        <img src="../assets/p-exploded.jpg" width="1600" height="1380" alt="Exploded view of eCandle 1: LFP battery pack, inverter, MPPT solar input, protection boards and embedded controller" loading="lazy" />
+        <div class="lp-specs">
+          <div><b>1,004Wh</b><span>LFP storage</span></div>
+          <div><b>300W</b><span>AC output</span></div>
+          <div><b>200W</b><span>Solar input, max</span></div>
+          <div><b>6,000+</b><span>Battery cycles</span></div>
+          <div><b>ESP32</b><span>Embedded controller</span></div>
+          <div><b>UN38.3 · CE</b><span>Certified</span></div>
+        </div>
+      </figure>
+      <p>eCandle 1 starts from a commercially manufactured energy system: a long-life LFP battery, inverter, solar input and production-grade protection. The battery, BMS and inverter stay a certified, sealed safety layer. Above them sits an embedded ESP32, and that's where eCandle's logic runs. It reads the device's state, unlocks output when a payment or an operator rule allows it, and keeps enforcing those rules when the network drops. <a href="../product/ecandle-1/">Full specification →</a></p>
+
+      <h3>The Energy Session: one record of service</h3>
+      <p>Every time someone uses an eCandle, the node can produce an <b>Energy Session</b>, a small record of who authorised it, how much energy actually moved and how it ended.</p>
+      <pre class="lp-code" aria-label="Example Energy Session record"><code>{
+  "deviceId":          "ecandle_001",
+  "authorisationRef":  "payment_or_paygo_ref",
+  "startMeterWh":      12540,
+  "endMeterWh":        12865,
+  "energyDeliveredWh": 325,
+  "terminationReason": "USER_STOP",
+  "deviceSignature":   "…"
+}</code></pre>
+      <p>This is the smallest useful unit of accountability. Everything built on top of it, from operator reports to revenue splits to a funder's dashboard, is derived from that record, not measured again. The schema is open for community review before it's frozen.</p>
+
+      <h3>Payment-neutral by design</h3>
+      <figure class="lp-fig">
+        <svg class="lp-diagram" viewBox="0 0 720 170" role="img" aria-labelledby="payTitle payDesc">
+          <title id="payTitle">Many ways to pay, one device</title>
+          <desc id="payDesc">Cash, mobile money, an operator backend or stablecoins all pass through a payment adapter, become an authorisation, and unlock the eCandle.</desc>
+          <g class="d-chips">
+            <rect x="10" y="10" width="150" height="32" rx="16"/><text x="85" y="31" text-anchor="middle">Cash via agent</text>
+            <rect x="10" y="50" width="150" height="32" rx="16"/><text x="85" y="71" text-anchor="middle">Mobile money</text>
+            <rect x="10" y="90" width="150" height="32" rx="16"/><text x="85" y="111" text-anchor="middle">Operator app</text>
+            <rect x="10" y="130" width="150" height="32" rx="16"/><text x="85" y="151" text-anchor="middle">Stablecoins</text>
+          </g>
+          <path class="d-wire" d="M160 26 C 205 26, 205 86, 250 86 M160 66 C 205 66, 205 86, 250 86 M160 106 C 205 106, 205 86, 250 86 M160 146 C 205 146, 205 86, 250 86"/>
+          <rect class="d-card" x="250" y="60" width="140" height="52" rx="10"/>
+          <text class="d-step" x="320" y="91" text-anchor="middle">Payment adapter</text>
+          <line class="d-wire" x1="390" y1="86" x2="440" y2="86"/>
+          <rect class="d-card" x="440" y="60" width="120" height="52" rx="10"/>
+          <text class="d-step" x="500" y="91" text-anchor="middle">Authorisation</text>
+          <line class="d-wire" x1="560" y1="86" x2="600" y2="86"/>
+          <rect class="d-solid" x="600" y="56" width="110" height="60" rx="12"/>
+          <text class="d-solid-t" x="655" y="91" text-anchor="middle">eCandle</text>
+        </svg>
+      </figure>
+      <p>People keep paying the way they already pay: cash through an agent, mobile money, an operator's app or stablecoins. Each method passes through an adapter and becomes the same thing, an authorisation the device understands. Funders, operators and cross-border partners can settle on-chain without turning crypto into a requirement for the person who just wants the lights on. And because the payment layer is an adapter, the loop isn't tied to any single stablecoin or chain.</p>
+    </section>
+
+    <!-- ============ 03 HOW ============ -->
+    <section class="lp-sec" id="how">
+      <p class="lp-num">03 · How</p>
+      <h2>One closed loop. Four steps. Settled by code.</h2>
+      <p class="lp-lead">eCandle connects global capital, local operations, real energy demand and stablecoin settlement into one loop that can be copied anywhere off-grid. Every unit's revenue feeds the people who made it possible, and the record of that revenue is open to all of them.</p>
+
+      <figure class="lp-fig">
+        <svg class="lp-diagram lp-loop" viewBox="0 0 720 330" role="img" aria-labelledby="loopTitle loopDesc">
+          <title id="loopTitle">The eCandle value loop</title>
+          <desc id="loopDesc">Four steps in a cycle. One, crowdfund and co-initiate. Two, deploy through local operators. Three, people access power and pay as they go. Four, payments are recorded and distributed on-chain, which funds the next units.</desc>
+          <ellipse class="d-orbit" cx="360" cy="165" rx="250" ry="120"/>
+          <path class="d-arrow" d="M 455 52 l 14 6 l -12 9"/>
+          <path class="d-arrow" d="M 265 278 l -14 -6 l 12 -9"/>
+          <circle class="d-hub" cx="360" cy="165" r="62"/>
+          <text class="d-node-t" x="360" y="160" text-anchor="middle">Replicable</text>
+          <text class="d-node-s" x="360" y="180" text-anchor="middle">VALUE LOOP</text>
+          <g class="d-stepnode"><circle cx="160" cy="80" r="22"/><text x="160" y="86" text-anchor="middle">1</text></g>
+          <text class="d-step" x="160" y="125" text-anchor="middle">Crowdfund &amp;</text>
+          <text class="d-step" x="160" y="143" text-anchor="middle">co-initiate</text>
+          <g class="d-stepnode"><circle cx="560" cy="80" r="22"/><text x="560" y="86" text-anchor="middle">2</text></g>
+          <text class="d-step" x="560" y="125" text-anchor="middle">Deploy through</text>
+          <text class="d-step" x="560" y="143" text-anchor="middle">local operators</text>
+          <g class="d-stepnode"><circle cx="560" cy="250" r="22"/><text x="560" y="256" text-anchor="middle">3</text></g>
+          <text class="d-step" x="560" y="296" text-anchor="middle">Access &amp;</text>
+          <text class="d-step" x="560" y="314" text-anchor="middle">pay as you go</text>
+          <g class="d-stepnode"><circle cx="160" cy="250" r="22"/><text x="160" y="256" text-anchor="middle">4</text></g>
+          <text class="d-step" x="160" y="296" text-anchor="middle">Record &amp;</text>
+          <text class="d-step" x="160" y="314" text-anchor="middle">distribute on-chain</text>
+        </svg>
+      </figure>
+
+      <ol class="lp-steps">
+        <li><b>Crowdfund &amp; co-initiate.</b> On-chain impact crowdfunding and ecosystem partners fund new eCandle units. Capital builders back real hardware, not narratives.</li>
+        <li><b>Deploy through operators.</b> Trusted local operators install units in off-grid homes, small shops and community hubs, then maintain them.</li>
+        <li><b>Access &amp; pay as you go.</b> People use power through pay-as-you-go, rental or shared-use plans, which creates a steady stream of small, recurring payments from real demand.</li>
+        <li><b>Record &amp; distribute on-chain.</b> Smart contracts record, aggregate and distribute payments and usage data. That makes revenue sharing transparent, opens the way to future real-world-asset structures and lets the loop fund its next units.</li>
+      </ol>
+
+      <h3>Who does what</h3>
+      <div class="lp-table-wrap">
+        <table class="lp-table">
+          <thead><tr><th>Role</th><th>Brings</th><th>Gets</th></tr></thead>
+          <tbody>
+            <tr><th><span class="mono-label">Global · Capex</span>Capital builders</th><td>Upfront capital for the physical units</td><td>Transparent, on-chain revenue distributions as their units earn from real use</td></tr>
+            <tr><th><span class="mono-label">Local · Opex</span>Local operators</th><td>Site selection, installation, maintenance, customer relationships</td><td>A share of the cashflow they generate, driven by uptime and service</td></tr>
+            <tr><th><span class="mono-label">Community · Demand</span>End users</th><td>Daily demand for light, charging, connectivity and work</td><td>Reliable, affordable power, paid in small amounts, only for what they use</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <h3>A day in the loop</h3>
+      <ol class="lp-day">
+        <li><span>06:30</span>Sun reaches the panel and the battery starts to fill.</li>
+        <li><span>13:00</span>A shopkeeper runs lights and charges phones for neighbours. Every top-up is a small payment.</li>
+        <li><span>19:00</span>A student pays for a few hours of power from their phone. The node checks the authorisation and turns on its output.</li>
+        <li><span>19:00</span>An Energy Session opens and the meter reading is recorded.</li>
+        <li><span>22:00</span>The session closes with the energy actually delivered: authorised, measured, signed.</li>
+        <li><span>Daily</span>Payments settle and the contract splits revenue between the operator, the funders and maintenance partners, following the project's rules.</li>
+        <li><span>Next</span>Funders see what their units earned, not a quarterly slide deck. The revenue helps fund the next node.</li>
+      </ol>
+
+      <h3>What's verified, and what isn't yet</h3>
+      <p>Credibility comes from saying plainly where the line is. Device-originated records can be linked to transparent on-chain payment and settlement events today. We don't claim that every energy record is already independently verified on-chain. Device signing, meter calibration and proof of renewable charging each need their own trust model, and those are being built in the open.</p>
+    </section>
+
+    <!-- ============ 04 PROOF ============ -->
+    <section class="lp-sec" id="proof">
+      <p class="lp-num">04 · Proof</p>
+      <h2>Not a promise. Already running.</h2>
+
+      <a class="lp-case" href="../#tas">
+        <img src="../assets/video/tas-hub-poster.jpg" width="1600" height="744" alt="An eCandle unlocking at TAS Hub in Awka, Nigeria" loading="lazy" />
+        <div class="lp-case-body">
+          <p class="mono-label">Live deployment · TAS Hub, Awka, Nigeria</p>
+          <h3>From TAS Hub to a builder’s home.</h3>
+          <p>At Tech and Sun Hubs’ solar-powered container hub at Nnamdi Azikiwe University, builders rent an eCandle by the hour, pay on-chain in stablecoins and take steady power beyond the hub’s walls. The whole flow runs on a real unit: payment, authorisation, activation, power.</p>
+          <p class="lp-case-quote">“eCandle is like me taking TAS back home.” <span>Solomon, web developer, TAS Hub member</span></p>
+          <span class="lp-case-cta">Watch the 4-minute film →</span>
+        </div>
+      </a>
+
+      <div class="lp-facts lp-facts-2">
+        <div><b>300,000+</b><span>distributed energy nodes in the Arkreen network behind eCandle</span></div>
+        <div><b>2 regions</b><span>with active pilots, across Africa and Latin America</span></div>
+      </div>
+
+      <h3>What is real today</h3>
+      <div class="lp-status">
+        <div><p class="mono-label lp-ok">Available today</p><ul><li>eCandle 1 commercial hardware</li><li>1,004Wh LFP storage, 300W inverter</li><li>Embedded ESP32 with device-control interface</li><li>Mobile app</li><li>Working on-chain pay-as-you-go flow, live at TAS Hub</li></ul></div>
+        <div><p class="mono-label lp-dev">In development</p><ul><li>Open ESP32 application runtime</li><li>OpenPAYGO integration for offline access</li><li>Device identity and signed session records</li><li>Developer SDK and interface docs</li></ul></div>
+        <div><p class="mono-label">Roadmap</p><ul><li>Operator fleet console</li><li>More payment adapters</li><li>Compatible-device adapter framework</li><li>Community-built energy apps</li></ul></div>
+      </div>
+    </section>
+
+    <!-- ============ 05 BIGGER ============ -->
+    <section class="lp-sec" id="bigger">
+      <p class="lp-num">05 · Why this is bigger than a battery</p>
+      <h2>A new kind of infrastructure asset.</h2>
+      <div class="lp-reasons">
+        <div><b>Stablecoins get a real job.</b><p>Trading and remittance are only the beginning. Energy is the most universal recurring demand there is: every day, in every home, everywhere. eCandle gives stablecoins something real, needed and repeatable to do.</p></div>
+        <div><b>The unit is the network.</b><p>Each node is the same loop in miniature. Every new unit adds track record and data, and every operator can grow from revenue. Infrastructure that copies itself scales like software.</p></div>
+        <div><b>Impact you can audit.</b><p>Funders don't have to take a report on faith. They can follow sessions, payments and distributions as they happen. Impact becomes a data stream, not a press release.</p></div>
+        <div><b>Built to outlast its first rails.</b><p>Payment-neutral adapters, an open session schema and a documented device layer mean the loop doesn't depend on one chain, one stablecoin or one company to keep the lights on.</p></div>
+      </div>
+      <blockquote class="lp-pull">Every light switched on becomes a line of cashflow that anyone can read. That's how the world’s most underserved energy demand becomes its most transparent investment.</blockquote>
+    </section>
+
+    <!-- ============ 06 JOIN ============ -->
+    <section class="lp-sec" id="join">
+      <p class="lp-num">06 · Join the loop</p>
+      <h2>Help light the next street.</h2>
+      <p class="lp-lead">The first eCandle deployments are being funded and run now. There's a seat in the loop for each of these roles.</p>
+      <div class="lp-join">
+        <a href="mailto:ecandle@arkreen.com?subject=eCandle%20%E2%80%94%20Capital%20builder%20enquiry"><span class="mono-label">Capital builders</span><b>Fund the nodes</b><span>Back real hardware and follow what it earns.</span><i>Email us →</i></a>
+        <a href="mailto:ecandle@arkreen.com?subject=eCandle%20%E2%80%94%20Local%20operator%20enquiry"><span class="mono-label">Local operators</span><b>Run a fleet</b><span>Deploy units in your community and share in the cashflow.</span><i>Email us →</i></a>
+        <a href="../product/ecandle-1/#developers"><span class="mono-label">Developers &amp; partners</span><b>Build on the device</b><span>Request a developer unit and build energy apps.</span><i>Developer preview →</i></a>
+      </div>
+      <p class="lp-contact">Questions? Write to <a href="mailto:ecandle@arkreen.com">ecandle@arkreen.com</a>, or start with the <a href="../">eCandle overview</a>.</p>
+    </section>
+
+    <!-- ============ NOTES ============ -->
+    <section class="lp-sec lp-notes" id="notes">
+      <p class="lp-num">Notes &amp; disclaimer</p>
+      <ol class="lp-refs">
+        <li id="n1">IEA, IRENA, UN Statistics Division, World Bank and WHO, <a href="https://www.seforall.org/system/files/2026-07/SEforALL%20Tracking%20SDG7%20-%20The%20Energy%20Progress%20Report%202026_22Jul2026.pdf" target="_blank" rel="noopener"><i>Tracking SDG 7: The Energy Progress Report 2026</i></a>. Figures are for 2024.</li>
+        <li id="n2">eCandle network and hardware figures are from Arkreen and the eCandle 1 specification as of October 2026.</li>
+      </ol>
+      <p class="lp-disclaimer">This lite paper is for information only. It is not an offer to sell, or a solicitation of an offer to buy, any security, token or other financial product, and nothing in it is investment, legal or tax advice. Descriptions of revenue sharing, distributions and future structures are illustrative. They depend on each project’s rules and on local law, and may change. Product status and roadmap items are forward-looking and may change.</p>
+    </section>
+
+  </main>
+</div>
+
+<!-- ============ FOOTER ============ -->
+<footer class="footer">
+  <div class="wrap">
+    <div class="footer-bottom" style="margin-top:0; border-top:none; padding-top:0;">
+      <span class="mono-label">© 2026 eCandle · Built on Arkreen</span>
+      <span class="mono-label"><a href="../">← Back to ecandle.arkreen.com</a></span>
+    </div>
+  </div>
+</footer>
+
+<script src="../app.js?v=20261021b"></script>
+<script src="lite.js?v=20261021"></script>
+
+</body>
+</html>

@@ -207,7 +207,7 @@
       entries.forEach(function (e) {
         if (!e.isIntersecting) return;
         navLinks.forEach(function (a, idx) {
-          a.style.color = sections[idx] === e.target ? "var(--paper)" : "";
+          a.style.color = sections[idx] === e.target ? "var(--ink)" : "";
         });
       });
     }, { threshold: 0.4 });
