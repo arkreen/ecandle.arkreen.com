@@ -146,6 +146,7 @@ section.ink .hero-actions { margin-top: 34px; }
 .tech-bridge { margin-top: 44px; border: 1px solid var(--line); border-radius: var(--radius); background: var(--paper-2); padding: 30px 32px; display: flex; align-items: center; justify-content: space-between; gap: 24px; flex-wrap: wrap; }
 .tech-bridge h3 { font-size: 25px; font-weight: 400; margin: 0; }
 .tech-bridge p { color: var(--ink-dim); font-size: 14.5px; margin: 8px 0 0; max-width: 56ch; }
+@media (max-width: 400px) { .tech-bridge { padding: 26px 22px; } .tech-bridge .btn { white-space: normal; } }
 
 /* ---------- faq ---------- */
 .faq-list { margin-top: 44px; border-top: 1px solid var(--line-soft); }

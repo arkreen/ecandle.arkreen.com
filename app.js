@@ -138,6 +138,64 @@
     });
   }
 
+  /* ---- TAS field story: muted teaser loop in view, full story on click ---- */
+  var tas = document.getElementById("tas-video");
+  var tasPlay = document.getElementById("tas-play");
+  var chapters = Array.prototype.slice.call(document.querySelectorAll(".tas-chapter"));
+  if (tas && tasPlay) {
+    var tasFull = false;
+    var playFull = function (t) {
+      t = t || 0;
+      if (!tasFull) {
+        tasFull = true;
+        tas.parentNode.classList.add("playing");
+        tas.loop = false;
+        tas.muted = false;
+        tas.controls = true;
+        tas.preload = "auto";
+        tas.src = tas.getAttribute("data-full");
+      }
+      // seek once metadata is in; play() now, inside the click, so sound is allowed
+      if (tas.readyState >= 1) tas.currentTime = t;
+      else if (t) tas.addEventListener("loadedmetadata", function () { tas.currentTime = t; }, { once: true });
+      var p = tas.play();
+      if (p && p.catch) p.catch(function () {});
+    };
+    tasPlay.addEventListener("click", function () { playFull(0); });
+    chapters.forEach(function (c) {
+      c.addEventListener("click", function () { playFull(parseFloat(c.getAttribute("data-t")) || 0); });
+    });
+    tas.addEventListener("timeupdate", function () {
+      if (!tasFull) return;
+      var now = tas.currentTime, current = 0;
+      chapters.forEach(function (c, i) { if (now >= parseFloat(c.getAttribute("data-t"))) current = i; });
+      chapters.forEach(function (c, i) { c.classList.toggle("active", i === current); });
+    });
+    // teaser: load and loop only while on screen; skipped for reduced motion
+    if (!reduce && "IntersectionObserver" in window) {
+      new IntersectionObserver(function (entries) {
+        entries.forEach(function (e) {
+          if (tasFull) return;
+          if (e.isIntersecting) {
+            if (!tas.getAttribute("src")) tas.src = tas.getAttribute("data-teaser");
+            var p = tas.play();
+            if (p && p.catch) p.catch(function () {});
+          } else {
+            tas.pause();
+          }
+        });
+      }, { threshold: 0.25 }).observe(tas);
+    }
+  }
+
+  // only one video plays with sound at a time
+  document.addEventListener("play", function (e) {
+    if (e.target.tagName !== "VIDEO" || e.target.muted) return;
+    Array.prototype.forEach.call(document.querySelectorAll("video"), function (v) {
+      if (v !== e.target && !v.muted && !v.paused) v.pause();
+    });
+  }, true);
+
   /* ---- smooth-scroll active nav link ---- */
   var navLinks = Array.prototype.slice.call(document.querySelectorAll(".nav-links a[href^='#']"));
   var sections = navLinks.map(function (a) {
