@@ -84,7 +84,10 @@
     btn.addEventListener("click", function () {
       var kit = btn.getAttribute("data-order");
       kitSelect.value = kit === "500W" ? "500W Solar Kit · $499" : "300W Solar Kit · $399";
+      // a finished request: start the next one from a clean form
+      if (form.classList.contains("done")) { form.reset(); form.classList.remove("done"); }
       successEl.hidden = true;
+      document.getElementById("orderError").hidden = true;
       if (typeof dialog.showModal === "function") dialog.showModal();
       else dialog.setAttribute("open", "");
     });
@@ -97,28 +100,43 @@
     if (e.target === dialog) dialog.close && dialog.close();
   });
 
+  var errorEl = document.getElementById("orderError");
+  var submitBtn = document.getElementById("orderSubmit");
+  function orderError(msg) { errorEl.textContent = msg; errorEl.hidden = !msg; }
+  form.addEventListener("input", function () { orderError(""); });
+
+  // Sent to /api/order: stored in the database and emailed to the eCandle team.
   form.addEventListener("submit", function (e) {
     e.preventDefault();
+    orderError("");
     if (!form.reportValidity()) return;
     var d = new FormData(form);
-    var lines = [
-      "Solar Kit order request",
-      "",
-      "Selected kit: " + d.get("kit"),
-      "Full name: " + d.get("name"),
-      "Country: " + d.get("country"),
-      "State / city: " + d.get("city"),
-      "WhatsApp / phone: " + d.get("phone"),
-      "Email: " + (d.get("email") || "-"),
-      "Purchase preference: " + d.get("preference"),
-      "Need delivery: " + d.get("delivery"),
-      "Need installation: " + d.get("installation"),
-      "Notes: " + (d.get("notes") || "-")
-    ];
-    var subject = "eCandle Solar Kit order request — " + d.get("kit");
-    window.location.href = "mailto:" + ORDER_EMAIL +
-      "?subject=" + encodeURIComponent(subject) +
-      "&body=" + encodeURIComponent(lines.join("\n"));
-    successEl.hidden = false;
+    var get = function (k) { return String(d.get(k) || "").trim(); };
+    var body = {
+      kit: get("kit"), name: get("name"), country: get("country"), city: get("city"),
+      phone: get("phone"), email: get("email"), preference: get("preference"),
+      delivery: get("delivery"), installation: get("installation"), notes: get("notes"),
+      hp: get("ec_hp_note")
+    };
+    submitBtn.disabled = true;
+    submitBtn.textContent = "Sending…";
+    fetch("/api/order", { method: "POST", headers: { "content-type": "application/json" }, body: JSON.stringify(body) })
+      .then(function (res) {
+        submitBtn.disabled = false;
+        submitBtn.textContent = "Request order";
+        if (res.ok) {
+          form.classList.add("done");
+          successEl.hidden = false;
+          return;
+        }
+        if (res.status === 429) orderError("Too many attempts. Please wait a minute and try again.");
+        else if (res.status === 422) orderError("Some details are missing or invalid. Please check the form and try again.");
+        else orderError("Something went wrong on our side. Please try again, or email " + ORDER_EMAIL + ".");
+      })
+      .catch(function () {
+        submitBtn.disabled = false;
+        submitBtn.textContent = "Request order";
+        orderError("We couldn’t send your request. Check your connection and try again, or email " + ORDER_EMAIL + ".");
+      });
   });
 })();

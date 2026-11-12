@@ -11,7 +11,7 @@
 <link rel="icon" href="brand/assets/favicon-32.png" sizes="32x32" type="image/png" />
 <link rel="icon" href="brand/assets/favicon-16.png" sizes="16x16" type="image/png" />
 <link rel="apple-touch-icon" href="brand/assets/apple-touch-icon-180.png" />
-<link rel="stylesheet" href="styles.css?v=20261021" />
+<link rel="stylesheet" href="styles.css?v=20261112" />
 </head>
 <body>
 
@@ -44,7 +44,7 @@
         <h1 class="display reveal" data-delay="1">Real energy demand,<br/>on-chain <span class="glow-word">settlement</span>.</h1>
         <p class="lede reveal" data-delay="2">eCandle is the first DePIN for Impact energy node — turning real-world, off-grid energy demand into programmable, recordable, and distributable cashflow, settled on-chain in stablecoins.</p>
         <div class="hero-actions reveal" data-delay="3">
-          <a class="btn btn-primary" href="#fund">Become a capital builder
+          <a class="btn btn-primary" href="#contact" data-role="investor">Become a capital builder
             <svg viewBox="0 0 16 16" fill="none"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
           </a>
           <a class="btn btn-ghost" href="product/ecandle-1/">Explore eCandle 1</a>
@@ -142,7 +142,7 @@
     </div>
 
     <figure class="tas-media reveal" data-delay="1">
-      <video id="tas-video" poster="assets/video/tas-hub-poster.jpg" data-teaser="assets/video/tas-hub-teaser.mp4" data-full="assets/video/tas-hub-story.mp4" muted loop playsinline preload="none" width="1600" height="744" aria-label="TAS Hub × eCandle: a builder pays on-chain, the eCandle unlocks, and TAS members talk about using it"></video>
+      <video id="tas-video" poster="assets/video/tas-hub-poster.jpg" data-teaser="assets/video/tas-hub-teaser.mp4" data-full="assets/video/tas-hub-story.mp4" muted loop playsinline preload="none" width="1280" height="594" aria-label="TAS Hub × eCandle: a builder pays on-chain, the eCandle unlocks, and TAS members talk about using it"></video>
       <button class="film-play tas-play" id="tas-play" type="button" aria-label="Play the full TAS Hub story with sound (4:22)">
         <span class="film-play-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8 5.5v13l11-6.5z" fill="currentColor"/></svg></span>
         <span class="film-play-label">Watch the full story <span class="film-play-time">4:22</span></span>
@@ -287,12 +287,156 @@
       <h2>Fund the nodes that<br/>power real communities.</h2>
       <p class="lede">Back the first eCandle deployments as a capital builder — and earn from a stablecoin value loop validated by real devices, real users, and real recurring payments.</p>
       <div class="cta-actions">
-        <a class="btn btn-primary" href="mailto:ecandle@arkreen.com?subject=eCandle%20%E2%80%94%20Capital%20builder%20enquiry">Become a capital builder
+        <a class="btn btn-primary" href="#contact" data-role="investor">Become a capital builder
           <svg viewBox="0 0 16 16" fill="none"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
         </a>
-        <a class="btn btn-ghost" href="mailto:ecandle@arkreen.com?subject=eCandle%20%E2%80%94%20Local%20operator%20enquiry">Become a local operator</a>
+        <a class="btn btn-ghost" href="#contact" data-role="operator">Become a local operator</a>
       </div>
       <p class="cta-contact">Questions? Write to us at <a href="mailto:ecandle@arkreen.com">ecandle@arkreen.com</a></p>
+    </div>
+  </div>
+</section>
+
+<!-- ============ CONTACT / ENQUIRY FORM ============ -->
+<section class="contact-band" id="contact" data-screen-label="Contact">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <p class="eyebrow">Talk to us</p>
+      <h2 class="section-title">Tell us what you want to build.</h2>
+      <p class="lede">Funding units, running a fleet, powering a hub or building on the device: a few details help us bring the right people into the conversation.</p>
+    </div>
+
+    <div class="cf-card reveal" id="cf-card">
+      <form class="cf-form" id="cf-form" novalidate>
+        <fieldset class="cf-group">
+          <legend><span>01</span> About you</legend>
+          <div class="cf-field">
+            <span class="cf-label" id="cf-role-l">You are</span>
+            <div class="cf-pills" data-name="role" data-single role="group" aria-labelledby="cf-role-l">
+              <button type="button" class="cf-pill" aria-pressed="false" data-key="investor">Capital builder / investor</button>
+              <button type="button" class="cf-pill" aria-pressed="false" data-key="operator">Local operator / energy entrepreneur</button>
+              <button type="button" class="cf-pill" aria-pressed="false" data-key="hub">Hub, school or community organisation</button>
+              <button type="button" class="cf-pill" aria-pressed="false" data-key="ngo">NGO / development programme</button>
+              <button type="button" class="cf-pill" aria-pressed="false" data-key="distributor">Distributor / reseller</button>
+              <button type="button" class="cf-pill" aria-pressed="false" data-key="developer">Developer / technology partner</button>
+              <button type="button" class="cf-pill" aria-pressed="false" data-key="other">Other</button>
+            </div>
+          </div>
+        </fieldset>
+
+        <fieldset class="cf-group">
+          <legend><span>02</span> About the project</legend>
+          <div class="cf-field">
+            <span class="cf-label" id="cf-int-l">Interested in</span>
+            <div class="cf-pills" data-name="interests" role="group" aria-labelledby="cf-int-l">
+              <button type="button" class="cf-pill" aria-pressed="true" data-key="funding">Funding eCandle deployments</button>
+              <button type="button" class="cf-pill" aria-pressed="false" data-key="fleet">Running an eCandle fleet</button>
+              <button type="button" class="cf-pill" aria-pressed="false" data-key="kits">Solar Kits for homes or shops</button>
+              <button type="button" class="cf-pill" aria-pressed="false" data-key="dev">Developer units / building on eCandle</button>
+              <button type="button" class="cf-pill" aria-pressed="false" data-key="pilot">Pilot or programme partnership</button>
+            </div>
+          </div>
+          <div class="cf-field">
+            <label class="cf-label" for="cf-market">Market / region</label>
+            <input class="cf-input" id="cf-market" name="market" type="text" maxlength="200" placeholder="e.g. Anambra, Nigeria" />
+          </div>
+          <div class="cf-grid">
+            <div class="cf-field">
+              <label class="cf-label" for="cf-scale">Scale <i>· optional</i></label>
+              <select class="cf-input" id="cf-scale" name="scale">
+                <option value="">Select…</option>
+                <option>Exploring / not sure</option>
+                <option>1–10 units</option>
+                <option>10–50 units</option>
+                <option>50–200 units</option>
+                <option>200–1,000 units</option>
+                <option>1,000+ units</option>
+              </select>
+            </div>
+            <div class="cf-field">
+              <label class="cf-label" for="cf-ops">Current operations <i>· optional</i></label>
+              <select class="cf-input" id="cf-ops" name="operations">
+                <option value="">Select…</option>
+                <option>Already running energy or PAYGo services</option>
+                <option>Running other local services</option>
+                <option>New to energy</option>
+                <option>Not sure</option>
+              </select>
+            </div>
+            <div class="cf-field">
+              <label class="cf-label" for="cf-time">Preferred start <i>· optional</i></label>
+              <select class="cf-input" id="cf-time" name="timeline">
+                <option value="">Select…</option>
+                <option>Within 1 month</option>
+                <option>1–3 months</option>
+                <option>3–6 months</option>
+                <option>Just exploring for now</option>
+              </select>
+            </div>
+          </div>
+          <div class="cf-field">
+            <span class="cf-label" id="cf-goal-l">Main goals <i>· optional</i></span>
+            <div class="cf-pills" data-name="goals" role="group" aria-labelledby="cf-goal-l">
+              <button type="button" class="cf-pill" aria-pressed="false">Household energy access</button>
+              <button type="button" class="cf-pill" aria-pressed="false">Power for shops and small businesses</button>
+              <button type="button" class="cf-pill" aria-pressed="false">Power for hubs, schools or clinics</button>
+              <button type="button" class="cf-pill" aria-pressed="false">Earn from transparent revenue sharing</button>
+              <button type="button" class="cf-pill" aria-pressed="false">Verifiable impact reporting</button>
+              <button type="button" class="cf-pill" aria-pressed="false">Replace diesel or kerosene</button>
+            </div>
+          </div>
+          <div class="cf-field">
+            <label class="cf-label" for="cf-notes">Anything else <i>· optional</i></label>
+            <textarea class="cf-input" id="cf-notes" name="notes" rows="4" maxlength="2000" placeholder="Sites, timelines, who you serve, questions…"></textarea>
+          </div>
+        </fieldset>
+
+        <fieldset class="cf-group">
+          <legend><span>03</span> Contact</legend>
+          <div class="cf-grid">
+            <div class="cf-field">
+              <label class="cf-label" for="cf-name">Name</label>
+              <input class="cf-input" id="cf-name" name="name" type="text" maxlength="120" autocomplete="name" />
+            </div>
+            <div class="cf-field">
+              <label class="cf-label" for="cf-company">Company / organisation</label>
+              <input class="cf-input" id="cf-company" name="company" type="text" maxlength="200" autocomplete="organization" />
+            </div>
+            <div class="cf-field">
+              <label class="cf-label" for="cf-title">Job title <i>· optional</i></label>
+              <input class="cf-input" id="cf-title" name="title" type="text" maxlength="120" autocomplete="organization-title" />
+            </div>
+            <div class="cf-field">
+              <label class="cf-label" for="cf-phone">Phone / WhatsApp <i>· optional</i></label>
+              <input class="cf-input" id="cf-phone" name="phone" type="tel" maxlength="60" autocomplete="tel" />
+            </div>
+            <div class="cf-field">
+              <label class="cf-label" for="cf-email">Work email</label>
+              <input class="cf-input" id="cf-email" name="email" type="email" maxlength="254" autocomplete="email" />
+            </div>
+          </div>
+        </fieldset>
+
+        <!-- honeypot: off-screen, never focusable, ignored by password managers -->
+        <div class="cf-hp" aria-hidden="true">
+          <label for="cf-hp">Leave this empty</label>
+          <input id="cf-hp" name="ec_hp_note" type="text" tabindex="-1" autocomplete="off" data-1p-ignore data-lpignore="true" data-bwignore="true" data-form-type="other" />
+        </div>
+
+        <p class="cf-error" id="cf-error" role="alert" hidden></p>
+        <div class="cf-actions">
+          <button type="submit" class="btn btn-primary cf-submit" id="cf-submit">Send enquiry
+            <svg viewBox="0 0 16 16" fill="none"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </button>
+          <p class="cf-fine">We use these details only to reply to your enquiry.</p>
+        </div>
+      </form>
+
+      <div class="cf-success" id="cf-success" tabindex="-1" hidden>
+        <span class="cf-success-mark" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none"><path d="M5 12.5l4.5 4.5L19 7.5" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+        <h3>Thanks, we’ve got it.</h3>
+        <p>Your enquiry is with the eCandle team, and we’ll reply to <b id="cf-success-email">your email</b>. If it’s urgent, write to <a href="mailto:ecandle@arkreen.com">ecandle@arkreen.com</a>.</p>
+      </div>
     </div>
   </div>
 </section>
@@ -312,7 +456,7 @@
       </div>
       <div>
         <h5>Participate</h5>
-        <div class="flinks"><a href="#fund">Fund a node</a><a href="#fund">Become an operator</a><a href="lite-paper/">Read the lite paper</a><a href="mailto:ecandle@arkreen.com?subject=eCandle%20%E2%80%94%20Partnership%20enquiry">Partner with us</a></div>
+        <div class="flinks"><a href="#contact" data-role="investor">Fund a node</a><a href="#contact" data-role="operator">Become an operator</a><a href="lite-paper/">Read the lite paper</a><a href="#contact">Partner with us</a></div>
       </div>
       <div>
         <h5>Community</h5>
@@ -327,6 +471,7 @@
 </footer>
 
 <script src="app.js?v=20261021b"></script>
+<script src="contact.js?v=20261112"></script>
 
 </body>
 </html>

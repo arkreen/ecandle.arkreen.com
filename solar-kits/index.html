@@ -19,8 +19,8 @@
 <link rel="icon" href="../brand/assets/favicon-16.png" sizes="16x16" type="image/png" />
 <link rel="apple-touch-icon" href="../brand/assets/apple-touch-icon-180.png" />
 <link rel="preload" as="image" href="../assets/kits/lifestyle-300w-paygo-clean.webp" type="image/webp" />
-<link rel="stylesheet" href="../styles.css" />
-<link rel="stylesheet" href="solar.css?v=20261021" />
+<link rel="stylesheet" href="../styles.css?v=20261112" />
+<link rel="stylesheet" href="solar.css?v=20261112" />
 </head>
 <body id="top">
 
@@ -461,14 +461,21 @@
         <label class="radio"><input type="radio" name="installation" value="No" checked />No</label>
       </fieldset>
     </div>
-    <label>Notes <span class="opt">optional</span><textarea name="notes" rows="3"></textarea></label>
+    <label>Notes <span class="opt">optional</span><textarea name="notes" rows="3" maxlength="2000"></textarea></label>
 
-    <button type="submit" class="btn btn-primary order-submit">Request order</button>
+    <!-- honeypot: off-screen, never focusable, ignored by password managers -->
+    <div class="order-hp" aria-hidden="true">
+      <label for="order-hp">Leave this empty</label>
+      <input id="order-hp" name="ec_hp_note" type="text" tabindex="-1" autocomplete="off" data-1p-ignore data-lpignore="true" data-bwignore="true" data-form-type="other" />
+    </div>
+
+    <p class="order-error" id="orderError" role="alert" hidden></p>
+    <button type="submit" class="btn btn-primary order-submit" id="orderSubmit">Request order</button>
     <p class="order-success" id="orderSuccess" hidden>Thank you. A local eCandle partner will confirm availability, delivery, installation and payment options before your order is accepted.</p>
   </form>
 </dialog>
 
-<script src="kits.js?v=20261012"></script>
+<script src="kits.js?v=20261112"></script>
 
 </body>
 </html>

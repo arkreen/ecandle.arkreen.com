@@ -187,6 +187,11 @@ section.ink .hero-actions { margin-top: 34px; }
 .order-form .radio { flex-direction: row; align-items: center; gap: 6px; font-weight: 400; font-size: 14px; }
 .order-submit { justify-content: center; margin-top: 6px; }
 .order-success { margin: 4px 0 0; font-size: 14px; color: var(--accent); }
+.order-error { margin: 0; padding: 10px 12px; border-radius: 6px; font-size: 13.5px; color: oklch(0.45 0.15 30); background: color-mix(in oklch, oklch(0.62 0.18 30) 10%, var(--paper)); border: 1px solid color-mix(in oklch, oklch(0.62 0.18 30) 30%, transparent); }
+.order-hp { position: absolute; left: -10000px; width: 1px; height: 1px; overflow: hidden; }
+/* after a successful request only the heading and the thank-you stay */
+.order-form.done > :not(.order-head):not(.order-success) { display: none; }
+.order-form.done .order-success { font-size: 15.5px; line-height: 1.55; margin-top: 6px; }
 @media (max-width: 520px) { .order-row { grid-template-columns: 1fr; } }
 
 @media (prefers-reduced-motion: reduce) {
